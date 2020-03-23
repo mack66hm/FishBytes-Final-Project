@@ -1,1 +1,1 @@
-gunicorn config.wsgi
+web: unicorn config.wsgi
