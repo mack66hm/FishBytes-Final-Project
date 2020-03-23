@@ -31,7 +31,8 @@ SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 in_production = bool(os.getenv('PRODUCTION'))
-DEBUG = not in_production
+# DEBUG = not in_production
+DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
