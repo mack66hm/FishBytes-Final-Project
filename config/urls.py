@@ -20,7 +20,8 @@ from fishbytes import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage, name="home")
+    path('', views.homepage, name="home"),
+    path('lake/<int:pk>/', views.lakedetail, name="lake-detail"),
 ]
 
 if settings.DEBUG:

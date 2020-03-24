@@ -1,3 +1,22 @@
 {% extends 'base.html' %}
+{% content block %}
 
-<h1></h1>
+
+<h1>{{ lake.name }}</h1>
+
+<div class="description">
+    a description goes here
+</div>
+
+<h2>FISH IN {{lake.name}}</h2>
+
+{% for each in fish %}
+<div class={{fish.name}}>
+    <div class="fish-image">
+        {{fish.image}}
+    </div>
+    <div class="fish-description">
+        {{fish.description}}
+    </div>
+</div>
+{% endfor %}
