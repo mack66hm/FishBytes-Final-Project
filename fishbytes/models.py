@@ -11,8 +11,8 @@ class Lakes(models.Model):
 
 
 class Fish(models.Model):
-    fish_name = models.CharField(max_length=100)
-    season = models.CharField(max_length=100)
+    fish_name = models.CharField(max_length=100, null=True, blank=True)
+    season = models.CharField(max_length=100, null=True, blank=True)
     citation = models.CharField(max_length=100, null=True, blank=True)
     identifiers = models.CharField(max_length=350, default=None)
     found_in = models.ForeignKey(to=Lakes, on_delete=models.DO_NOTHING, null=True, blank=True, related_name='lake')
