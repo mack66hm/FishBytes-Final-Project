@@ -5,3 +5,26 @@
     text-decoration: none;
     background-color: rgb(245, 227, 204);
 }
+
+.title {
+    font-style: italic;
+    font-size: 50px;
+    text-align: center;
+    padding: 1rem;
+    background-color: darkgreen;
+    color: rgb(245, 227, 204)
+}
+
+.header {
+    height: 10rem;
+    background-color: darkgreen;
+    border: darkgreen solid 1rem;
+}
+
+.link {
+    font-size: 20px;
+    color: rgb(245, 227, 204);
+    background-color: darkgreen;
+    display: flex;
+    justify-content: space-between;
+}

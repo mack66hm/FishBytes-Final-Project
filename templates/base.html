@@ -1,1 +1,35 @@
-hello there
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>FishBytes</title>
+    {% block meta %}{% endblock %}
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">FishBytes</h1>
+
+    <div class="link">
+        <a class="link home" href="/">Home</a>
+        <a class="link logout" href="http://127.0.0.1:8000/accounts/logout/">Log Out</a>
+    </div>
+    </header>
+
+
+    <main>
+        <p> drop down menu to select lakes </p>
+
+        <p>link to fishing license registration and additional info</p>
+        <p>some sort of photo to pull the site together</p>
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+</body>
+</html>
