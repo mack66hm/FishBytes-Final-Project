@@ -1,6 +1,11 @@
 from django.shortcuts import render
-from .models import Lakes
+from .models import Lakes, Fish
 
 # Create your views here.
 def homepage(request):
     return render(request, 'base.html')
+
+def lakedetail(request, pk):
+    lake = Lakes.objects.get(pk=pk)
+    fish = lake.fish_in_lake
+    return render(request, 'core/lakedetail.html', {'lake': lake, 'fish': fish, })
