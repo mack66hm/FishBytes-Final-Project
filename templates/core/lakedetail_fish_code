@@ -1,0 +1,10 @@
+{% for each in fish %}
+<div class={{fish.name}}>
+    <div class="fish-image">
+        {{fish.image}}
+    </div>
+    <div class="fish-description">
+        {{fish.description}}
+    </div>
+</div>
+{% endfor %}
