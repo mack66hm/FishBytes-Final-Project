@@ -8,9 +8,9 @@ def homepage(request):
 
 def lakedetail(request, pk):
     lake = Lakes.objects.get(pk=pk)
-    fish = lake.fish_in_lake
-    return render(request, 'core/lakedetail.html', {'lake': lake, 'fish': fish, })
+    fishes = lake.fish_in_lake
+    return render(request, 'core/lakedetail.html', {'lake': lake, 'fishes': fishes, })
 
 def fish_detail(request, pk):
     fish = get_object_or_404(Fish, pk=pk)
-    return render(request, "core/fish_detail.html", 'fish':fish, 'pk': pk)
+    return render(request, "core/fish_detail.html", {'fish':fish, 'pk': pk})
