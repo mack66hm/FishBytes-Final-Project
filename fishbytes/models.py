@@ -1,10 +1,13 @@
 from django.db import models
+from django.utils.text import slugify
+from PIL import Image
 
 # Create your models here.
 class Lakes(models.Model):
     name = models.CharField(max_length=100)
     fish_in_lake = models.ForeignKey(to='Fish', on_delete=models.DO_NOTHING, related_name='fish')
     food_safe = models.CharField(max_length=50)
+    slug = models.SlugField(null = True, unique = True)
 
     def __str__(self):
         return f'Lake: {self.name}'
@@ -17,6 +20,8 @@ class Fish(models.Model):
     identifiers = models.CharField(max_length=350, null=True, default=None)
     found_in = models.ForeignKey(to=Lakes, on_delete=models.DO_NOTHING, null=True, blank=True, related_name='lake')
     regulations = models.ForeignKey(to='Regulations', blank=True, null=True, on_delete=models.DO_NOTHING)
+    slug = models.SlugField(null = True, unique = True)
+    img = models.ImageField(default='default.png')
 
     def __str__(self):
         return f'Fish: {self.fish_name}, {self.season}, {self.citation}, {self.identifiers}'

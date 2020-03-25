@@ -21,13 +21,15 @@
 
 
     <main>
+        {% block content %}
+
         <p> drop down menu to select lakes </p>
+        <div class="license">
         <p> Do you have a Fishing License?</p>
         <a href="http://www.eregulations.com/northcarolina/hunting-fishing/fishing-licenses/">Click here to get one!</a>
-
+        </div>
     
-        <p>some sort of photo to pull the site together</p>
-        {% block content %}
+        <img src="/Users/geoffbishop/Momentum/final-project/static/Man-Fishing-in-Lake.jpeg">
 
         {% endblock %}
 
