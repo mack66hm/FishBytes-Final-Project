@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name="home"),
     path('lake/<int:pk>/', views.lakedetail, name="lake-detail"),
+    path('fish/<int:pk', views.fish_detail, name="fish-detail"),
 ]
 
 if settings.DEBUG:
