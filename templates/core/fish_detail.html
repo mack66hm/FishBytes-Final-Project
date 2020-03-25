@@ -1,6 +1,7 @@
 {% extends 'base.html'%}
 {% load static %}
 
+{% content block %}
 <div class="fish-div">
     <p>{{fish.fish_name}}</p>
     <p>{{fish.season}}</p>
@@ -9,3 +10,4 @@
     <p>{{fish.found_in}}</p>
     <p>{{fish.regulations}}</p>
 </div>
+{% endblock %}
