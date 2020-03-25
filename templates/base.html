@@ -5,7 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.css">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
+    <script src="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.js" defer></script>
+
     <title>FishBytes</title>
     {% block meta %}{% endblock %}
 </head>
@@ -24,6 +28,14 @@
         {% block content %}
 
         <p> drop down menu to select lakes </p>
+        <div class="dropdown">
+            <button type="button" class="dropdown-trigger">Lakes</button>
+            <div class="dropdown-menu">
+                {% for lake in lakes %}
+                <a href="/lake/{{lake.pk}}/">{{lake.name}}</a>
+                {% endfor %}
+            </div>
+        </div>
         <div class="license">
         <p> Do you have a Fishing License?</p>
         <a href="http://www.eregulations.com/northcarolina/hunting-fishing/fishing-licenses/">Click here to get one!</a>
