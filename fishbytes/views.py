@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Lakes, Fish
+from .models import Lakes, Fish, Regulations
 
 # Create your views here.
 def homepage(request):
