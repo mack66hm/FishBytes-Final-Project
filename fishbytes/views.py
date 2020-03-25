@@ -4,7 +4,8 @@ from .models import Lakes, Fish, Regulations
 
 # Create your views here.
 def homepage(request):
-    return render(request, 'base.html')
+    lakes = Lakes.objects.all()
+    return render(request, 'base.html', {'lakes': lakes, })
 
 def lakedetail(request, pk):
     lake = Lakes.objects.get(pk=pk)
