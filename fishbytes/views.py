@@ -14,4 +14,4 @@ def lakedetail(request, pk):
 
 def fish_detail(request, pk):
     fish = get_object_or_404(Fish, pk=pk)
-    return render(request, "core/fish_detail.html", {'fish':fish, 'pk': pk})
+    return render(request, "core/fish_detail.html", {'fish': fish, 'pk': pk})

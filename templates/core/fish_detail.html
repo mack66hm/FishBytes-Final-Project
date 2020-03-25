@@ -1,11 +1,14 @@
 {% extends 'base.html'%}
 {% load static %}
 
+{% block content %}
 <div class="fish-div">
-    <p>{{fish.fish_name}}</p>
-    <p>{{fish.season}}</p>
-    <p>{fish.citation}}</p>
-    <p>{{fish.identifiers}}</p>
-    <p>{{fish.found_in}}</p>
-    <p>{{fish.regulations}}</p>
+    <p>Fish Name: {{fish.fish_name}}</p>
+    <p>Fish Season: {{fish.season}}</p>
+    <p>Citation: {{fish.citation}}</p>
+    <p>Identifiers for this fish: {{fish.identifiers}}</p>
+    <p>Can be found in: {{fish.found_in}}</p>
+    <p>Regulations: {{regulations.daily_total}}</p>
+    <p> {{fish.img}}</p>
 </div>
+{% endblock %}
