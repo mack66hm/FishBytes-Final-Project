@@ -7,10 +7,10 @@ def homepage(request):
     lakes = Lakes.objects.all()
     return render(request, 'base.html', {'lakes': lakes, })
 
-def lakedetail(request, pk):
+def lake_detail(request, pk):
     lake = Lakes.objects.get(pk=pk)
     fishes = lake.fish_in_lake
-    return render(request, 'core/lakedetail.html', {'lake': lake, 'fishes': fishes, })
+    return render(request, 'core/lake_detail.html', {'lake': lake, 'fishes': fishes, })
 
 def fish_detail(request, pk):
     fish = get_object_or_404(Fish, pk=pk)

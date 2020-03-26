@@ -8,11 +8,12 @@
 
 .title {
     font-style: italic;
-    font-size: 75px;
+    font-size: 100px;
     text-align: center;
     padding: 1rem;
     background-color: darkgreen;
-    color: rgb(245, 227, 204)
+    color: rgb(245, 227, 204);
+    font-family: fantasy;
 }
 
 .header {
@@ -23,8 +24,8 @@
 
 .link {
     font-size: 20px;
-    color: rgb(245, 227, 204);
-    background-color: darkgreen;
+    /* color: rgb(245, 227, 204); */
+    color: darkgreen;
     display: flex;
     justify-content: space-between;
 }
@@ -33,4 +34,19 @@
     display: flex;
     justify-content: center;
     text-align: center;
+    font-size: 25px
+}
+
+.homepage-pic-div {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown {
+    margin: 1rem;
+    margin-top: 3rem;
+}
+
+.dropdown-menu {
+    margin: 1rem;
 }
