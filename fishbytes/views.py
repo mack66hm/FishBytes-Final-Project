@@ -1,15 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Lakes, Fish, Regulations
+from .models import Lake, Fish, Regulation
 
 
 # Create your views here.
 def homepage(request):
-    lakes = Lakes.objects.all()
+    lakes = Lake.objects.all()
     return render(request, 'base.html', {'lakes': lakes, })
 
 def lake_detail(request, pk):
-    lake = Lakes.objects.get(pk=pk)
-    fishes = lake.fish_in_lake
+    lake = Lake.objects.get(pk=pk)
+    fishes = Lake.fish_in_lake_set.all()
     return render(request, 'core/lakedetail.html', {'lake': lake, 'fishes': fishes, })
 
 def fish_detail(request, pk):
