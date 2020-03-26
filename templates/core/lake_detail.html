@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
 
 
-<h1>{{ lake.name }}</h1>
+<h1 class="lake-name">{{ lake.name }}</h1>
 
-<div class="description">
+<div class="lake-description">
     a description goes here
 </div>
 
+<div class="fish-in-lake">
 <h2>FISH IN {{lake.name}}</h2>
+</div>
 
 {% endblock %}

@@ -3,12 +3,12 @@
 
 {% block content %}
 <div class="fish-div">
-    <p>Fish Name: {{fish.fish_name}}</p>
+    <img src="{% static '{{fish.img}}' %}" class= "fish-img">
+    <p class="fish-name">Name: {{fish.fish_name}}</p>
     <p>Fish Season: {{fish.season}}</p>
     <p>Citation: {{fish.citation}}</p>
-    <p>Identifiers for this fish: {{fish.identifiers}}</p>
-    <p>Can be found in: {{fish.found_in}}</p>
+    <p>Key Identifiers: {{fish.identifiers}}</p>
+    <p>Found In: {{fish.found_in}}</p>
     <p>Regulations: {{regulations.daily_total}}</p>
-    <p> {{fish.img}}</p>
 </div>
 {% endblock %}
