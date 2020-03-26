@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -140,6 +141,9 @@ STATICFILES_DIRS = [
 # Custom user model
 
 AUTH_USER_MODEL = 'users.User'
+
+
+ACCOUNT_ACTIVATION_DAYS=7
 
 # Debug toolbar config
 
