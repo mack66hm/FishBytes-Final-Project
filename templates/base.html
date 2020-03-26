@@ -27,9 +27,8 @@
     <main>
         {% block content %}
 
-        <p> drop down menu to select lakes </p>
         <div class="dropdown">
-            <button type="button" class="dropdown-trigger">Lakes</button>
+            <button type="button" class="dropdown-trigger">Please Select a Lake</button>
             <div class="dropdown-menu">
                 {% for lake in lakes %}
                 <a href="/lake/{{lake.pk}}/">{{lake.name}}</a>
@@ -37,11 +36,13 @@
             </div>
         </div>
         <div class="license">
-        <p> Do you have a Fishing License?</p>
-        <a href="http://www.eregulations.com/northcarolina/hunting-fishing/fishing-licenses/">Click here to get one!</a>
+        <p> Do you have a Fishing License? </p>
+        <a href="http://www.eregulations.com/northcarolina/hunting-fishing/fishing-licenses/"> Click here to get one!</a>
         </div>
-    
-        <img src="/Users/geoffbishop/Momentum/final-project/static/Man-Fishing-in-Lake.jpeg">
+        
+        <div class="homepage-pic-div">
+        <img src="{% static 'Man-Fishing-in-Lake.jpg' %}" alt="My image" class="homepage-pic">
+        </div>
 
         {% endblock %}
 
