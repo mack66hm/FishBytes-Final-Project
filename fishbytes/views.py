@@ -9,7 +9,7 @@ def homepage(request):
 
 def lake_detail(request, pk):
     lake = Lake.objects.get(pk=pk)
-    fishes = Lake.fish_in_lake_set.all()
+    fishes = lake.fish_in_lake.all()
     return render(request, 'core/lakedetail.html', {'lake': lake, 'fishes': fishes, })
 
 def fish_detail(request, pk):
