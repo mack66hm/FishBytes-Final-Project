@@ -5,7 +5,7 @@ from PIL import Image
 # Create your models here.
 class Lake(models.Model):
     name = models.CharField(max_length=100)
-    fish_in_lake = models.ManyToManyField('Fish', related_name='fishes')
+    fish_in_lake = models.ManyToManyField('Fish', related_name='lakes')
     food_safe = models.CharField(max_length=50)
     slug = models.SlugField(null = True, unique = True)
     lake_tag = models.ForeignKey("Tag", on_delete=models.CASCADE, null=True, blank=True)

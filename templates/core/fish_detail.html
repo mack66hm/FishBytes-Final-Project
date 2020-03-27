@@ -16,4 +16,10 @@
     <li>Maximum Weight (lbs): {{fish.regulations.weight_max}}</li> 
     <li>Daily Limit: {{fish.regulations.daily_total}}</li>
 </div>
+<div>
+    Found In::
+    {% for lake in lakes%}
+    {{lake.name}}::
+    {% endfor %}
+</div>
 {% endblock %}
