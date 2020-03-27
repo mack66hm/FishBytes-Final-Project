@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Lake, Fish, Regulation
+from fishbytes.models import Lake, Fish, Regulation
+from fishbytes.forms import CatchForm
 
 
 # Create your views here.
@@ -16,3 +17,19 @@ def fish_detail(request, pk):
     fish = get_object_or_404(Fish, pk=pk)
     lakes = fish.lakes.all()
     return render(request, "core/fish_detail.html", {'lakes': lakes, 'fish': fish, 'pk': pk})
+
+# def profile(request):
+#     pass
+
+def add_catch(request):
+    if request.method =='POST':
+        form = CatchForm(request.POST)
+        if form.is_valid():
+            catch = form.save(commit=False)
+            catch.save()
+            return redirect('add-catch')
+    else:
+        form = CatchForm()
+        return render(request, 'core/add_catch.html', {'form': form})
+
+
