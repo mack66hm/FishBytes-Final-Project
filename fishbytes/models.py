@@ -5,7 +5,7 @@ from PIL import Image
 # Create your models here.
 class Lake(models.Model):
     name = models.CharField(max_length=100)
-    fish_in_lake = models.ManyToManyField('Fish', related_name='lake')
+    fish_in_lake = models.ManyToManyField('Fish', related_name='fishes')
     food_safe = models.CharField(max_length=50)
     slug = models.SlugField(null = True, unique = True)
     lake_tag = models.ForeignKey("Tag", on_delete=models.CASCADE, null=True, blank=True)
@@ -19,7 +19,7 @@ class Fish(models.Model):
     season = models.CharField(max_length=100, null=True, blank=True)
     citation = models.CharField(max_length=100, null=True, blank=True)
     identifiers = models.CharField(max_length=350, null=True, default=None)
-    found_in = models.ManyToManyField('Lake', related_name='fish', null=True, blank=True)
+    
     regulations = models.ForeignKey(to='Regulation', blank=True, null=True, on_delete=models.DO_NOTHING)
     slug = models.SlugField(null = True, unique = True)
     img = models.ImageField(default='default.png')

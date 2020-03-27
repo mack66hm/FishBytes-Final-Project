@@ -9,11 +9,35 @@
     a description goes here
 </div>
 
-<h2>FISH IN {{lake.name}}</h2>
+<h2>Fish In {{lake.name}}</h2>
 
-
-<div class='fishdeets'>
-    {{lake.fish_in_lake}}
+<div class="dropdown">
+    <button type="button" class="dropdown-trigger">Please Select a Fish</button>
+    <div class="dropdown-menu">
+        {% for fish in fishes %}
+        <a href="/fish/{{fish.pk}}/">{{fish.name}}</a>
+        {% endfor %}
+    </div>
 </div>
+
+{% for fish in fishes %}
+<div class='fishdeets'>
+    <h3>{{ fish.name }}</h3>
+    <div>
+        <img src="/static/{{fish.url}}/">
+    </div>
+    <h3>Description</h3>
+    <div>
+        {{fish.identifiers}}
+    </div>
+    <h3>Season</h3>
+        {{fish.season}}
+    <h3>Records</h3>
+    <div>
+        {{fish.citation}}
+    </div>
+    <h3></h3>
+</div>
+{% endfor %}
 
 {% endblock %}
