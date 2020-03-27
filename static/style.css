@@ -6,6 +6,10 @@
     background-color: rgb(245, 227, 204);
 }
 
+p {
+    margin: 0;
+}
+
 .title {
     font-style: italic;
     font-size: 150px;
@@ -81,14 +85,44 @@
 
 .fish-div {
     border: solid black .5rem;
-    padding: .5rem;
     font-size: 20px;
     text-align: center;
 }
 
 .fish-name {
-    font-size: 36px;
+    font-size: 48px;
 }
 
+.identifiers-div {
 
+}
 
+.identifiers {
+    text-decoration: underline;
+    font-size: 30px;
+    margin-top: 1rem;
+}
+
+.regulation {
+    margin-top: 1rem;
+    text-decoration: underline;
+    font-size: 30px;
+}
+
+.season {
+    text-decoration: underline;
+    font-size: 30px;
+    margin-top: 1rem;
+}
+
+.citation {
+    text-decoration: underline;
+    font-size: 30px;
+    margin-top: 1rem;
+}
+
+.found-in {
+    text-decoration: underline;
+    font-size: 30px;
+    margin-top: 1rem;
+}
