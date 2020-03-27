@@ -22,7 +22,9 @@
 
     <div class='found-in-div'>
     <p class='found-in'>Found In: </p>
-    <li>{{fish.found_in}}</li>
+    {% for lake in lakes%}
+    <li><a href="/lake/{{lake.pk}}/">{{lake.name}}</a></li>
+    {% endfor %}
     </div>
 
     <div class ="regulation-div">
@@ -34,4 +36,5 @@
     <li>Daily Limit: {{fish.regulations.daily_total}}</li>
     </div>
 </div>
+
 {% endblock %}
