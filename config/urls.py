@@ -23,6 +23,7 @@ urlpatterns = [
     path('', views.homepage, name="home"),
     path('lake/<int:pk>/', views.lake_detail, name="lake-detail"),
     path('fish/<int:pk>/', views.fish_detail, name="fish-detail"),
+    path('catch/add/', views.add_catch, name='add-catch'),
 ]
 
 if settings.DEBUG:

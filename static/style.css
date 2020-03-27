@@ -126,3 +126,23 @@ p {
     font-size: 30px;
     margin-top: 1rem;
 }
+
+
+
+.add-catch-form {
+    padding: 1rem;
+    font-size: 24px
+}
+
+.catch-form-title {
+    margin: 1rem;
+    font-size: 50px;
+    text-align: center;
+}
+
+.save-button {
+    background-color: purple;
+    margin-top: 1rem;
+    width: 5rem;
+    height: 2rem;
+}

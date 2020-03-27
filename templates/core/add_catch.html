@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class= 'add-catch-form'>
+    <form method='POST' class='catch'>
+        <h2 class='catch-form-title'>Record Your Catch</h2>
+        {% csrf_token %} {{ form.as_p }}
+        <button type="submit" class="save-button">Save</button>
+    </form>
+</div>
+
+{% endblock %}
