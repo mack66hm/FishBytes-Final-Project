@@ -3,10 +3,8 @@
 
 {% block content %}
 
-<img src="{% static 'fish/Black-Crappie-Duane-Raver.jpg' %}" alt="My image" class="homepage-pic">
-
 <div class="fish-div">
-    <img src= {{fish.img}} class= "fish-img">
+    <img src= "{% static '{{fish.img}}' %}" class= "fish-img">
     <p class="fish-name">{{fish.name}}</p>
 
     <div class="season-div">

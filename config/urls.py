@@ -24,6 +24,9 @@ urlpatterns = [
     path('lake/<int:pk>/', views.lake_detail, name="lake-detail"),
     path('fish/<int:pk>/', views.fish_detail, name="fish-detail"),
     path('catch/add/', views.add_catch, name='add-catch'),
+    path('accounts/', include('registration.backends.default.urls')),
+
+
 ]
 
 if settings.DEBUG:
@@ -34,3 +37,6 @@ if settings.DEBUG:
         # For django versions before 2.0:
         # url(r'^__debug__/', include(debug_toolbar.urls)),
     ] + urlpatterns
+
+# if settings.DEBUG:
+#     urlpatterns += static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
