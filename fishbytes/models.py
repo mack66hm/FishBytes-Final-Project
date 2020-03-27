@@ -38,6 +38,14 @@ class Regulation(models.Model):
     def __str__(self):
         return f'Size Limit: {self.size_min}, {self.size_max}, {self.weight_min}, {self.weight_max}, Daily Limit: {self.daily_total}'
 
+class Catch(models.Model):
+    image = models.ImageField(default=None)
+    fish = models.CharField(max_length=100, null=True, blank=True)
+    size = models.CharField(max_length=100, null=True, blank=True)
+    weight = models.CharField(max_length=100, null=True, blank=True)
+    lake = models.CharField(max_length=100, null=True, blank=True)
+    date = models.DateField(auto_now_add=False)
+
 class Tag(models.Model):
     name = models.CharField(max_length = 100)
     slug = models.SlugField(null=False, unique=True, default=slugify(name))

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from fishbytes.models import Lake, Fish, Regulation
+from fishbytes.models import Lake, Fish, Regulation, Tag, Catch
 from fishbytes.forms import CatchForm
 
 

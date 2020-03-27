@@ -1,6 +1,5 @@
 from django import forms
-from fishbytes.models import Fish
-# from users.models import User
+from fishbytes.models import Catch
 
 # class ProfileForm(forms.ModelForm):
 #     class Meta:
@@ -8,9 +7,7 @@ from fishbytes.models import Fish
 #         fields = ('username')
 
 
-
-
 class CatchForm(forms.ModelForm):
     class Meta:
-        model = Fish
-        fields = ('image', 'name', 'size (inches)', 'weight(lbs)', 'lake', 'date')
+        model = Catch
+        fields = ('image', 'fish', 'size', 'weight', 'lake', 'date')
