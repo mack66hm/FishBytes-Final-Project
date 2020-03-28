@@ -10,14 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Question',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('body', models.CharField(max_length=500)),
-                ('pos', models.CharField(blank=True, max_length=5, null=True)),
-            ],
-        ),
         migrations.AlterField(
             model_name='fish',
             name='img',
