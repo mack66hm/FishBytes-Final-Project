@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from PIL import Image
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Lake(models.Model):
@@ -21,7 +22,7 @@ class Fish(models.Model):
     identifiers = models.CharField(max_length=350, null=True, default=None)
     regulations = models.ForeignKey(to='Regulation', blank=True, null=True, on_delete=models.DO_NOTHING)
     slug = models.SlugField(null = True, unique = True)
-    img = models.ImageField(default='default.png')
+    img = models.ImageField(upload_to='fish/')
     fish_tag = models.ForeignKey("Tag", on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
@@ -36,6 +37,14 @@ class Regulation(models.Model):
 
     def __str__(self):
         return f'Size Limit: {self.size_min}, {self.size_max}, {self.weight_min}, {self.weight_max}, Daily Limit: {self.daily_total}'
+
+class Catch(models.Model):
+    image = models.ImageField(default=None)
+    fish = models.CharField(max_length=100, null=True, blank=True)
+    size = models.CharField(max_length=100, null=True, blank=True)
+    weight = models.CharField(max_length=100, null=True, blank=True)
+    lake = models.CharField(max_length=100, null=True, blank=True)
+    date = models.DateField(auto_now_add=False)
 
 class Tag(models.Model):
     name = models.CharField(max_length = 100)
