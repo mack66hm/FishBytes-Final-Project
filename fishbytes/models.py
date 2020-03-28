@@ -57,3 +57,13 @@ class Tag(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         return super().save(*args, **kwargs)
+
+
+class Question(model.Model):
+    body = models.CharField(max_length = 500)
+    internalID = models.CharField(max_length = 5, blank=True, null=True)
+    yes = models.ForeignKey(to='Question', blank=True, null=True)
+    no = models.ForeignKey(to='Question', blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.body}"
