@@ -59,11 +59,9 @@ class Tag(models.Model):
         return super().save(*args, **kwargs)
 
 
-class Question(model.Model):
+class Question(models.Model):
     body = models.CharField(max_length = 500)
-    internalID = models.CharField(max_length = 5, blank=True, null=True)
-    yes = models.ForeignKey(to='Question', blank=True, null=True)
-    no = models.ForeignKey(to='Question', blank=True, null=True)
+    pos = models.CharField(max_length = 5, blank=True, null=True)
 
     def __str__(self):
-        return f"{self.body}"
+        return f"{self.pos}: {self.body}"
