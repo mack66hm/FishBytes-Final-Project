@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from fishbytes.models import Lake, Fish, Regulation, Tag, Catch
+from .models import Lake, Fish, Regulation, Tag, Catch, User
 from fishbytes.forms import CatchForm
+from django.contrib.auth.decorators import login_required
+from django.http import HttpRequest
+
+
 
 
 # Create your views here.
@@ -18,26 +22,31 @@ def fish_detail(request, pk):
     lakes = fish.lakes.all()
     return render(request, "core/fish_detail.html", {'lakes': lakes, 'fish': fish, 'pk': pk})
 
-# def profile_page(request):
-#     pass
+@login_required
+def profile_page(request):
+    catches = Catch.objects.filter(user=request.user)
+    return render(request, 'core/profile_page.html', {'catches': catches})
 
-
+@login_required
 def add_catch(request):
     if request.method =='POST':
         form = CatchForm(request.POST)
         if form.is_valid():
             catch = form.save(commit=False)
+            catch.user = request.user
             catch.save()
-            return redirect('add-catch')
+            return redirect('profile-page')
     else:
         form = CatchForm()
-        return render(request, 'core/add_catch.html', {'form': form})
+    return render(request, 'core/add_catch.html', {'form': form})
 
+@login_required
 def edit_catch(request, pk):
     catch = get_object_or_404(Catch, pk=pk)
     if request.method == 'POST':
         form = CatchForm(request.POST, instance=catch)
         catch = form.save(commit=False)
+        catch.user = request.user
         catch.save
         return redirect('add-catch', pk=catch.pk)
     else: 

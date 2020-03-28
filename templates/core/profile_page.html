@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<h2 class='username-profile'>Welcome {{ user.username }}</h2>
+
+<a class='add-button' href= "{% url 'add-catch' %}">Add New Catch</a>
+
+{% for catch in catches.all %}
+<div class='catch-div'>
+    <img src="media/{{catch.image}}">
+    <p> {{catch.fish}} </p>
+    <p> {{catch.size}}</p>
+    <p> {{catch.weight}}</p>
+    <p> {{catch.lake}}</p>
+    <p> {{catch.date}}</p>
+
+    <div class='button-div'>
+        <a href= "{% url 'edit-catch' pk=catch.pk %}"><buton class='edit-button'>Edit</button></a>
+    </div>
+
+</div>
+{% endfor %}
+{% endblock %}
