@@ -18,8 +18,9 @@ def fish_detail(request, pk):
     lakes = fish.lakes.all()
     return render(request, "core/fish_detail.html", {'lakes': lakes, 'fish': fish, 'pk': pk})
 
-# def profile(request):
+# def profile_page(request):
 #     pass
+
 
 def add_catch(request):
     if request.method =='POST':
@@ -31,5 +32,17 @@ def add_catch(request):
     else:
         form = CatchForm()
         return render(request, 'core/add_catch.html', {'form': form})
+
+def edit_catch(request, pk):
+    catch = get_object_or_404(Catch, pk=pk)
+    if request.method == 'POST':
+        form = CatchForm(request.POST, instance=catch)
+        catch = form.save(commit=False)
+        catch.save
+        return redirect('add-catch', pk=catch.pk)
+    else: 
+        form = CatchForm(instance=catch)
+    return render(request, 'core/edit_catch.html', {'form': form}) 
+
 
 
