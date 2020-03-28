@@ -9,7 +9,7 @@ class Lake(models.Model):
     food_safe = models.CharField(max_length=50)
     slug = models.SlugField(null = True, unique = True)
     lake_tag = models.ForeignKey("Tag", on_delete=models.CASCADE, null=True, blank=True)
-    img = models.ImageField(default='default.png')
+    img = models.ImageField(default='default.png', upload_to='fish')
     def __str__(self):
         return f'Lake: {self.name}'
 
