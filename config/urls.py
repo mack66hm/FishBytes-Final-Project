@@ -26,6 +26,7 @@ urlpatterns = [
     path('catch/add/', views.add_catch, name='add-catch'),
     path('accounts/', include('registration.backends.default.urls')),
     path('catch/<int:pk>/edit/', views.edit_catch, name='edit-catch'),
+    path('profile/', views.profile_page, name='profile-page'),
 
 
 ]
