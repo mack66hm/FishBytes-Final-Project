@@ -10,4 +10,4 @@ from fishbytes.models import Catch
 class CatchForm(forms.ModelForm):
     class Meta:
         model = Catch
-        fields = ('fish', 'size', 'weight', 'lake', 'date')
+        fields = ('image', 'fish', 'size', 'weight', 'lake', 'date')

@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils.text import slugify
 from PIL import Image
-from django.contrib.auth.models import User
+from  users.models import User
+from django.http import HttpRequest
+
 
 # Create your models here.
 class Lake(models.Model):
@@ -39,7 +41,8 @@ class Regulation(models.Model):
         return f'Size Limit: {self.size_min}, {self.size_max}, {self.weight_min}, {self.weight_max}, Daily Limit: {self.daily_total}'
 
 class Catch(models.Model):
-    image = models.ImageField(default=None)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    image = models.ImageField(upload_to='media/', blank=True, null=True)
     fish = models.CharField(max_length=100, null=True, blank=True)
     size = models.CharField(max_length=100, null=True, blank=True)
     weight = models.CharField(max_length=100, null=True, blank=True)
