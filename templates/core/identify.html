@@ -1,12 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-<div>
-    <p>yes or no question</p>
-    <button id="yes">YES</button>
-    <button id="no">NO</button>
-</div>
 
-<h2>test question renders</h2>
 {% for question in questions %}
 <div id="{{question.pos}}">
     <p>{{question.body}}</p>

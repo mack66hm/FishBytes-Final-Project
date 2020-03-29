@@ -55,8 +55,8 @@ def edit_catch(request, pk):
 
 
 def fishid(request):
-    question = Question.objects.all().filter(pos='1a')
-    return render(request, 'core/identify.html', {'question': question})
+    questions = Question.objects.all()
+    return render(request, 'core/identify.html', {'questions': questions})
 
 
 
