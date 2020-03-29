@@ -27,6 +27,7 @@ urlpatterns = [
     path('accounts/', include('registration.backends.default.urls')),
     path('catch/<int:pk>/edit/', views.edit_catch, name='edit-catch'),
     path('profile/', views.profile_page, name='profile-page'),
+    path('profile/<int:pk>/delete/', views.delete_catch, name='delete-catch')
 
 
 ]
