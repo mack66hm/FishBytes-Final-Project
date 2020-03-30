@@ -54,7 +54,7 @@ def edit_catch(request, pk):
     return render(request, 'core/edit_catch.html', {'form': form}) 
 
 def fishid(request):
-    questions = Question.objects.all()
+    questions = Question.objects.all().order_by('pos')
     return render(request, 'core/identify.html', {'questions': questions})
 
 @login_required
