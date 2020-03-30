@@ -21,7 +21,7 @@ class Fish(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     season = models.CharField(max_length=100, null=True, blank=True)
     citation = models.CharField(max_length=100, null=True, blank=True)
-    identifiers = models.CharField(max_length=350, null=True, default=None)
+    identifiers = models.TextField(max_length=550, null=True, default=None)
     regulations = models.ForeignKey(to='Regulation', blank=True, null=True, on_delete=models.DO_NOTHING)
     slug = models.SlugField(null = True, unique = True)
     img = models.ImageField(upload_to='fish/')
