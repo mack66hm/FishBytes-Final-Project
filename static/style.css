@@ -38,10 +38,12 @@ p {
     display: flex;
     justify-content: center;
     text-align: center;
+}
+
+.license-link {
+    color: black;
     font-size: 25px;
     font-weight: bold;
-    color: black;
-
 }
 
 .homepage-pic-div {
@@ -87,6 +89,12 @@ p {
     border: solid black .5rem;
     font-size: 20px;
     text-align: center;
+}
+
+.fish-img {
+    width: 800px;
+    border-radius: 7rem;
+    border: solid black 3px
 }
 
 .fish-name {
