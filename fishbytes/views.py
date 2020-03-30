@@ -53,10 +53,12 @@ def edit_catch(request, pk):
         form = CatchForm(instance=catch)
     return render(request, 'core/edit_catch.html', {'form': form}) 
 
-
 def fishid(request):
     questions = Question.objects.all()
     return render(request, 'core/identify.html', {'questions': questions})
 
-
-
+@login_required
+def delete_catch(request, pk):
+    catch = get_object_or_404(Catch, pk=pk)
+    catch.delete()
+    return redirect('profile-page')

@@ -146,3 +146,56 @@ p {
     width: 5rem;
     height: 2rem;
 }
+
+.profile-header {
+    border-bottom: royalblue solid 1px;
+    padding: 1rem;
+}
+
+.username-profile {
+    padding: 2rem;
+    font-size: 50px;
+}
+
+.add-button {
+    background-color: rebeccapurple;
+    margin: 2rem;
+    border-radius: 2rem;
+    padding:1rem
+}
+
+.catch-info {
+    margin: 1rem;
+}
+
+.date {
+    padding-bottom: 1rem;
+}
+
+.catch-div {
+    margin:1rem;
+    padding-top: 1rem;
+    font-size: 28px;
+}
+
+.edit-button {
+    padding: 1rem;
+    background-color: rebeccapurple;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.delete-button {
+    padding: 1rem;
+    background-color: rebeccapurple;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button-div {
+    display: flex;
+    justify-content: space-between;
+}
+
