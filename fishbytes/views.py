@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Lake, Fish, Regulation, Tag, Catch, User
+from .models import Lake, Fish, Regulation, Tag, Catch, User, Question
 from fishbytes.forms import CatchForm
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest
@@ -30,7 +30,7 @@ def profile_page(request):
 @login_required
 def add_catch(request):
     if request.method =='POST':
-        form = CatchForm(request.POST)
+        form = CatchForm(request.POST, request.FILES)
         if form.is_valid():
             catch = form.save(commit=False)
             catch.user = request.user
@@ -52,6 +52,10 @@ def edit_catch(request, pk):
     else: 
         form = CatchForm(instance=catch)
     return render(request, 'core/edit_catch.html', {'form': form}) 
+
+def fishid(request):
+    questions = Question.objects.all().order_by('pos')
+    return render(request, 'core/identify.html', {'questions': questions})
 
 @login_required
 def delete_catch(request, pk):

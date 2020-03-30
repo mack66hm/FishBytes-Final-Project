@@ -60,3 +60,12 @@ class Tag(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
         return super().save(*args, **kwargs)
+
+
+class Question(models.Model):
+    body = models.CharField(max_length = 500)
+    pos = models.CharField(max_length = 5, blank=True, null=True)
+    yesPos = models.CharField(max_length = 5, blank=True, null=True)
+    noPos = models.CharField(max_length = 5, blank=True, null=True)
+    def __str__(self):
+        return f"{self.pos}: {self.body}"
