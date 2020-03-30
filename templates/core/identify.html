@@ -1,20 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-
-{% for question in questions %}
-<div id="{{question.pos}}">
-    <p>{{question.body}}</p>
-    <button id="{{question.posYes}}">YES</button>
-    <button id="{{question.posNo}}">NO</button>
-</div>
-{% endfor %}
-
-
 <div class="tabs">
+    <div class="tabs-pane active" id="tab-99">
+        Let's figure out waht you've caught!
+        <nav class="tabs-nav">
+        <a href="#tab-1">Start</a>
+        </nav>
+    </div>
     {% for question in questions %}
     <div class="tabs-pane" id="tab-{{question.pos}}">
     {{question.body}}
-    <nav class="tabs-nav">
+        <nav class="tabs-nav">
         <a href="#tab-{{question.yesPos}}">Yes</a>
         <a href="#tab-{{question.noPos}}">No</a>
         </nav>
