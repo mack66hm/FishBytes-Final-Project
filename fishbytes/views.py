@@ -30,7 +30,7 @@ def profile_page(request):
 @login_required
 def add_catch(request):
     if request.method =='POST':
-        form = CatchForm(request.POST)
+        form = CatchForm(request.POST, request.FILES)
         if form.is_valid():
             catch = form.save(commit=False)
             catch.user = request.user
