@@ -161,11 +161,12 @@ AUTH_USER_MODEL = 'users.User'
 
 ACCOUNT_ACTIVATION_DAYS=7
 
+LOGIN_REDIRECT_URL='http://fishbytes.herokuapp.com//profile/'
+
 REGISTRATION_DEFAULT_FROM_EMAIL=True
 
 
-
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 # Debug toolbar config
