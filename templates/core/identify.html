@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block meta %}
+<script src="/static/identify.js" defer></script>
+{% endblock %}
 {% block content %}
 <div class="tabs">
     <div class="tabs-pane active" id="tab-99">
@@ -10,10 +13,8 @@
     {% for question in questions %}
     <div class="tabs-pane" id="tab-{{question.pos}}">
     {{question.body}}
-        <nav class="tabs-nav">
-        <a href="#tab-{{question.yesPos}}">Yes</a>
-        <a href="#tab-{{question.noPos}}">No</a>
-        </nav>
+        <button class="button yes" id="{{question.yesPos}}">Yes</button>
+        <button class="button no" id="{{question.noPos}}">No</button>
     </div>
     {% endfor %}
 </div>
