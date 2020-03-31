@@ -15,6 +15,16 @@ from pathlib import Path
 
 import environ
 
+import sendgrid
+
+# sg = sendgrid.SendGridAPIClient('Fishbytes API Key')
+# message = sendgrid.Mail()
+# message.add_to('To_Email')
+# message.set_from('User_Name')
+# message.set_subject('Email_Subject')
+# message.set_html('Body')
+# sg.send(message)
+
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),)
@@ -150,6 +160,13 @@ AUTH_USER_MODEL = 'users.User'
 
 
 ACCOUNT_ACTIVATION_DAYS=7
+
+REGISTRATION_DEFAULT_FROM_EMAIL=True
+
+
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 # Debug toolbar config
 
