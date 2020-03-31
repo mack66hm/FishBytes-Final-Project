@@ -24,7 +24,7 @@ urlpatterns = [
     path('lake/<int:pk>/', views.lake_detail, name="lake-detail"),
     path('fish/<int:pk>/', views.fish_detail, name="fish-detail"),
     path('catch/add/', views.add_catch, name='add-catch'),
-    path('accounts/', include('registration.backends.default.urls')),
+    path('accounts/', include('registration.backends.simple.urls')),
     path('catch/<int:pk>/edit/', views.edit_catch, name='edit-catch'),
     path('profile/', views.profile_page, name='profile-page'),
     path('profile/<int:pk>/delete/', views.delete_catch, name='delete-catch'),

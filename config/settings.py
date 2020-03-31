@@ -159,15 +159,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 AUTH_USER_MODEL = 'users.User'
 
 
-ACCOUNT_ACTIVATION_DAYS=7
+# ACCOUNT_ACTIVATION_DAYS=7
 
-LOGIN_REDIRECT_URL='http://fishbytes.herokuapp.com//profile/'
+LOGIN_REDIRECT_URL='http://fishbytes.herokuapp.com/profile/'
 
-REGISTRATION_DEFAULT_FROM_EMAIL=True
+# REGISTRATION_DEFAULT_FROM_EMAIL=True
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
+# EMAIL_HOST = ('SMTP_HOST')
+# EMAIL_PORT = ('SMTP_PORT')
+# EMAIL_HOST_USER = ('SMTP_USERNAME')
+# EMAIL_HOST_PASSWORD = ('SMTP_PASSWORD')
+# EMAIL_USE_TLS = True
 
 # Debug toolbar config
 
