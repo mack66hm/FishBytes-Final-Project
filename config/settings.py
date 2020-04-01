@@ -15,9 +15,11 @@ from pathlib import Path
 
 import environ
 
+
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, False),)
+    DEBUG=(bool, False),
+    USE_S3=(bool, False),)
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / ...
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 
     # Third-party
     'debug_toolbar',
@@ -149,7 +152,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 AUTH_USER_MODEL = 'users.User'
 
 
-ACCOUNT_ACTIVATION_DAYS=7
+# ACCOUNT_ACTIVATION_DAYS=7
+
+LOGIN_REDIRECT_URL='http://fishbytes.herokuapp.com/profile/'
+
+# REGISTRATION_DEFAULT_FROM_EMAIL=True
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 # Debug toolbar config
 
@@ -159,6 +170,22 @@ INTERNAL_IPS = [
     # ...
 ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/'),
+]
+
+if env('USE_S3'):
+    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400'
+    }
+    DEFAULT_FILE_STORAGE = 'fishbytes.storage_backends.MediaStorage'
+
+
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
