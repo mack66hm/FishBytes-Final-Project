@@ -15,19 +15,11 @@ from pathlib import Path
 
 import environ
 
-import sendgrid
-
-# sg = sendgrid.SendGridAPIClient('Fishbytes API Key')
-# message = sendgrid.Mail()
-# message.add_to('To_Email')
-# message.set_from('User_Name')
-# message.set_subject('Email_Subject')
-# message.set_html('Body')
-# sg.send(message)
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, False),)
+    DEBUG=(bool, False),
+    USE_S3=(bool, False),)
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / ...
@@ -55,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 
     # Third-party
     'debug_toolbar',
@@ -167,11 +160,7 @@ LOGIN_REDIRECT_URL='http://fishbytes.herokuapp.com/profile/'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = ('SMTP_HOST')
-# EMAIL_PORT = ('SMTP_PORT')
-# EMAIL_HOST_USER = ('SMTP_USERNAME')
-# EMAIL_HOST_PASSWORD = ('SMTP_PASSWORD')
-# EMAIL_USE_TLS = True
+
 
 # Debug toolbar config
 
@@ -181,6 +170,22 @@ INTERNAL_IPS = [
     # ...
 ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/'),
+]
+
+if env('USE_S3'):
+    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400'
+    }
+    DEFAULT_FILE_STORAGE = 'fishbytes.storage_backends.MediaStorage'
+
+
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']
