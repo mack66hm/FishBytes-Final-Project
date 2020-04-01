@@ -62,3 +62,8 @@ def delete_catch(request, pk):
     catch = get_object_or_404(Catch, pk=pk)
     catch.delete()
     return redirect('profile-page')
+
+def show_map(request):
+    mapbox_access_token = 'pk.mapbox_access_token'
+    return render(request, 'core/maps.html', 
+                  { 'mapbox_access_token': mapbox_access_token })
