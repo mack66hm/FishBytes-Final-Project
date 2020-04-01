@@ -1,0 +1,19 @@
+id,body,pos,yesPos,noPos
+2,You caught a Channel Catfish!,2,end,end
+1,Does your fish have whiskers?,1,2,3
+3,Does your fish have vertical stripes?,3,4,5
+4,Are the strips broad alternating between yellow and a dark color?,4,6,7
+5,You caught a Yellow Perch!,6,end,end
+6,Is there a dark spot directly behind its gills?,7,8,1
+7,You caught a Bluegill!,8,end,end
+8,Does it have horizontal stripes?,5,9,10
+9,Does it have 2 patches of teeth under its tounge?,9,11,12
+10,You have a Striped Bass!,11,end,end
+11,You have a White Bass!,12,end,end
+13,Is there a dark band running horizontally across your fish?,13,15,16
+15,You caught a Largemouth Bass!,15,end,end
+16,You caught a Smallmouth Bass!,16,end,end
+12,I your fish pan shaped with round body with a tail sitcking off it?,10,14,13
+14,Does your fish have irregular dark spots covering its body?,14,17,18
+17,You have a Black Crappie!,17,end,end
+18,You have a White Crappie!,18,end,end
