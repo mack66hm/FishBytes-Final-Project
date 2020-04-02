@@ -8,13 +8,22 @@
 <br>
 <h1>{{ lake.name }}</h1>
 
-<img src="/static/{{lake.img}}" class= "lake-img">
+<div id='map' style='width: 700px; height: 700px;'></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWFjazY2aG0iLCJhIjoiY2s4ZXowYnJmMDFseDNmcGhjbmg4ODc4cyJ9.17aD7Ep5mTEgYqTSKkwzUw';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [{{lake.lng}}, {{lake.lat}}], // starting position [lng, lat]
+        zoom: 11 // starting zoom
+    });
+</script>
 <div class="lake-description">
     a description goes here
 </div>
 
 <div class="fish-in-lake">
-<h2>Fish In {{lake.name}}</h2>
+    <h2>Fish In {{lake.name}}</h2>
 </div>
 
 <div class="dropdown">
@@ -37,7 +46,7 @@
         {{fish.identifiers}}
     </div>
     <h3>Season</h3>
-        {{fish.season}}
+    {{fish.season}}
     <h3>Records</h3>
     <div>
         {{fish.citation}}

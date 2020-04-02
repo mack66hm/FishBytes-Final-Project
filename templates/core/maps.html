@@ -2,75 +2,46 @@
 {% load static %}
 
 
+
 {% block content %}
+
 <body>
-    <div id='map' style='width: 1000px; height: 1000px;'></div>
+    <div id='map' style='width: 700px; height: 700px;'></div>
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoibWFjazY2aG0iLCJhIjoiY2s4ZXowYnJmMDFseDNmcGhjbmg4ODc4cyJ9.17aD7Ep5mTEgYqTSKkwzUw';
-    var map = new mapboxgl.Map({
-    container: 'map', // container id
-    style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-    center: [35.7796, -78.6382], // starting position [lng, lat]
-    zoom: 9 // starting zoom
-    });
-    </script>
-    <!-- <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoibWFjazY2aG0iLCJhIjoiY2s4ZXowYnJmMDFseDNmcGhjbmg4ODc4cyJ9.17aD7Ep5mTEgYqTSKkwzUw';
         var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/light-v10',
-            zoom: 12,
-            center: [-122.447303, 37.753574]
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+            center: [-79.016569, 35.735554], // starting position [lng, lat]
+            zoom: 11 // starting zoom
         });
-
-        map.on('load', function () {
-            /* Sample feature from the `examples.8fgz4egr` tileset:
-            {
-            "type": "Feature",
-            "properties": {
-            "ethnicity": "White"
-            },
-            "geometry": {
-            "type": "Point",
-            "coordinates": [ -122.447303, 37.753574 ]
-            }
-            }
-            */
-            map.addSource('name', {
-                type: 'vector',
-                url: 'mapbox://examples.8fgz4egr'
-            });
-            map.addLayer({
-                'id': 'population',
-                'type': 'circle',
-                'source': 'name',
-                'source-layer': 'sf2010',
-                'paint': {
-                    // make circles larger as the user zooms from z12 to z22
-                    'circle-radius': {
-                        'base': 1.75,
-                        'stops': [[12, 2], [22, 180]]
-                    },
-                    // color circles by ethnicity, using a match expression
-                    // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-                    'circle-color': [
-                        'match',
-                        ['get', 'name'],
-                        'White',
-                        '#fbb03b',
-                        'Black',
-                        '#223b53',
-                        'Hispanic',
-                        '#e55e5e',
-                        'Asian',
-                        '#3bb2d0',
-    /* other */ '#ccc'
-                    ]
+        var geojson = {
+            type: 'FeatureCollection',
+            features: [{
+                type: 'Feature',
+                location: {
+                    type: 'Point',
+                    coordinates: [-77.032, 38.913]
+                },
+                properties: {
+                    title: 'Mapbox',
+                    description: 'Washington, D.C.'
                 }
-            });
-        });
-
-    </script> -->
+            },
+            {
+                type: 'Feature',
+                location: {
+                    type: 'Point',
+                    coordinates: [-122.414, 37.776]
+                },
+                properties: {
+                    title: 'Mapbox',
+                    description: 'San Francisco, California'
+                }
+            }]
+        };
+    </script>
 </body>
 {% endblock %}
+
 </html>
