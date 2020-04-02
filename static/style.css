@@ -207,5 +207,19 @@ p {
     justify-content: space-between;
 }
 
+.starter{
+    border: 5px solid aquamarine !important;
+    width: 60%;
+    margin: auto;
+    font-weight: bold;
+    align-content: center;
+}
 
-
+.questions{
+    border: 5px solid red !important;
+    width: 60%;
+    padding: 1rem;
+    margin: auto;
+    font-weight: bold;
+    align-content: center;
+}
