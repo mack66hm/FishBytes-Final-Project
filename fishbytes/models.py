@@ -42,7 +42,7 @@ class Regulation(models.Model):
 
 class Catch(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
-    image = models.ImageField(upload_to='media/', blank=True, null=True)
+    image = models.ImageField(upload_to='', blank=True, null=True)
     fish = models.CharField(max_length=100, null=True, blank=True)
     size = models.CharField(max_length=100, null=True, blank=True)
     weight = models.CharField(max_length=100, null=True, blank=True)
