@@ -7,7 +7,9 @@
 <div class='profile-header'>
 <h3 class='username-profile'>Welcome {{ user.username }}!</h2>
 
-    <a class='add-button' href= "{% url 'add-catch' %}">Add New Catch</a>
+    <a href= "{% url 'add-catch' %}">
+    <button type="button" class="button-block">Add A New Catch</button>
+    </a>
 
 </div>
 
