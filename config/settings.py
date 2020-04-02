@@ -47,11 +47,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
 
     # Third-party
     'debug_toolbar',
     'django_extensions',
+    'storages',
+
     
 
     # Project-specific
@@ -141,11 +142,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static')
 
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
+
+MEDIA_ROOT = os.path.join(STATIC_ROOT, 'media')
+MEDIA_URL = '/media/'
+
+
+
 
 # Custom user model
 
@@ -175,14 +181,14 @@ STATICFILES_DIRS = [
 ]
 
 if env('USE_S3'):
-    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
-    AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+    AWS_ACCESS_KEY_ID = 'AKIA4UR23XL5FYV6TJAE'
+    AWS_SECRET_ACCESS_KEY = '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'
+    AWS_STORAGE_BUCKET_NAME = 'fishbytes-assets'
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400'
     }
-    DEFAULT_FILE_STORAGE = 'fishbytes.storage_backends.MediaStorage'
+    DEFAULT_FILE_STORAGE = 'config.storage_backends.MediaStorage'
 
 
 # Configure Django App for Heroku.
