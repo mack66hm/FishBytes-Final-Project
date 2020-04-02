@@ -7,8 +7,8 @@
 <div class='profile-header'>
 <h3 class='username-profile'>Welcome {{ user.username }}!</h2>
 
-    <a href= "{% url 'add-catch' %}">
-    <button type="button" class="button-block">Add A New Catch</button>
+    <a class="button button-block" href= "{% url 'add-catch' %}">
+    Add A New Catch
     </a>
 
 </div>
@@ -21,12 +21,14 @@
     <p class='catch-info'> Weight: {{catch.weight}}</p>
     <p class='catch-info'> Lake: {{catch.lake}}</p>
     <p class='catch-info date'> Date: {{catch.date}}</p>
-
-    <div class='button-div'>
-        <a href= "{% url 'edit-catch' pk=catch.pk %}"><buton class='edit-button'>Edit</button></a>
-        <a href= "{% url 'delete-catch' pk=catch.pk %}"><buton class='delete-button'>Delete</button></a>
+    <div class="button-div">
+    <a class="button" href= "{% url 'edit-catch' pk=catch.pk %}">
+        Edit
+    </a>
+    <a class="button" href= "{% url 'delete-catch' pk=catch.pk %}">
+        Delete
+    </a>
     </div>
-
 </div>
 {% endfor %}
 {% endblock %}

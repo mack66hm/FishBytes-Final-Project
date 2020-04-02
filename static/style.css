@@ -57,18 +57,10 @@ p {
     width: 800px;
 }
 
-.dropdown {
-    margin: 1rem;
-    margin-top: 3rem;
-    background-color: lightslategrey;
-}
-
-.dropdown-menu {
-    background-color: rgb(176, 176, 176);
-}
-
-.dropdown-trigger {
-    background-color: purple
+.dropdown-front{
+    display: flex;
+    justify-content: center;
+    margin-top: .5rem;
 }
 
 .lake-name {
@@ -182,7 +174,7 @@ p {
 
 .button-div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .starter{

@@ -31,9 +31,9 @@
     <main>
         {% block content %}
 
-        <div class="dropdown">
+        <div class="dropdown dropdown-front">
             <button type="button" class="dropdown-trigger">Please Select a Lake</button>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu dropdown-front">
                 {% for lake in lakes %}
                 <a href="/lake/{{lake.pk}}/">{{lake.name}}</a>
                 {% endfor %}
