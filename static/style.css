@@ -156,6 +156,11 @@ p {
 }
 
 .profile-header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
     border-bottom: royalblue solid 1px;
     padding: 1rem;
 }
@@ -181,9 +186,11 @@ p {
 }
 
 .catch-div {
-    margin:1rem;
+    display: flex;
+    margin: auto;
     padding-top: 1rem;
     font-size: 28px;
+    width: 85%
 }
 
 .edit-button {

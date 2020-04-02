@@ -5,9 +5,9 @@
 {% block content %}
 
 <div class='profile-header'>
+<h3 class='username-profile'>Welcome {{ user.username }}!</h2>
 
-<h2 class='username-profile'>Welcome {{ user.username }}!</h2>
-<a class='add-button' href= "{% url 'add-catch' %}">Add New Catch</a>
+    <a class='add-button' href= "{% url 'add-catch' %}">Add New Catch</a>
 
 </div>
 
