@@ -6,9 +6,6 @@ body {
     background-color: rgb(245, 227, 204);
 }
 
-p {
-    margin: 0;
-}
 
 .title {
     font-style: italic;
@@ -21,7 +18,6 @@ p {
 }
 
 .header {
-    /* height: 12rem; */
     background-color: darkgreen;
     border: darkgreen solid 1rem;
 }
@@ -78,7 +74,6 @@ p {
 .fishdeets {
     display: flex;
     flex-direction: column;
-    /* border: 6px solid black; */
     border-radius: 1rem;
     width: 45%;
     margin: auto;
@@ -101,6 +96,11 @@ p {
     width: 800px;
     border-radius: 7rem;
     border: solid black 3px
+}
+
+.card-image {
+    width: fit-content;
+    height: 
 }
 
 .fish-name {
@@ -171,7 +171,7 @@ p {
 }
 
 .catch-info {
-    margin: 1rem;
+    margin: auto;
 }
 
 .date {
@@ -189,7 +189,9 @@ p {
 
 .button-div {
     display: flex;
-    justify-content: space-between;
+    margin: .5rem;
+    width: 85%;
+    justify-content: space-evenly;
 }
 
 .starter{

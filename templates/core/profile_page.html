@@ -15,18 +15,16 @@
 <div class="fishes">
 {% for catch in catches.all %}
     <div class='fishdeets'>
-        <img src="/static/{{catch.image}}">
+        <img class="card-image" src="/static/{{catch.image}}">
         <p class='catch-info'> Fish: {{catch.fish}} </p>
-        <p class='catch-info'> Size: {{catch.size}}</p>
-        <p class='catch-info'> Weight: {{catch.weight}}</p>
-        <p class='catch-info'> Lake: {{catch.lake}}</p>
-        <p class='catch-info date'> Date: {{catch.date}}</p>
+        <p class='catch-info'> Size: {{catch.size}}||
+        Weight: {{catch.weight}}</p>
+        <p class='catch-info'> Lake: {{catch.lake}}||
+        Date: {{catch.date}}</p>
         <div class="button-div">
             <a class="button" href= "{% url 'edit-catch' pk=catch.pk %}">
             Edit
             </a>
-        </div>
-        <div class="button-div">
             <a class="button" href= "{% url 'delete-catch' pk=catch.pk %}">
             Delete
             </a>

@@ -29,11 +29,9 @@
 {% for fish in fishes %}
 <div class='fishdeets'>
     <h3>{{ fish.name }}</h3>
-    <div>
-        <a href="/fish/{{fish.pk}}/">
-            <img src="/static/{{fish.img}}">
-        </a>
-    </div>
+    <a href="/fish/{{fish.pk}}/">
+        <img class="card-image" src="/static/{{fish.img}}">
+    </a>
     <div class="deets">
         {{fish.identifiers}}
     </div>
