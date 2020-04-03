@@ -15,16 +15,16 @@
         <dd>{{fish.citation}}</dd>
         <dt>Key Identifiers:</dt>
         <dd>{{fish.identifiers}}</dd>
-        <dt>Found In: </dt>
-        {% for lake in lakes%}
-        <dd><a href="/lake/{{lake.pk}}/">{{lake.name}}</a></dd>
-        {% endfor %}
         <dt>Regulations:</dt>
         <dd>Minimum Size: {{fish.regulations.size_min}}<br>
-        Maximum Size: {{fish.regulations.size_max}}<br>
-        Minimum Weight (lbs): {{fish.regulations.weight_min}}<br>
-        Maximum Weight (lbs): {{fish.regulations.weight_max}}<br>
-        Daily Limit: {{fish.regulations.daily_total}}</dd>
+            Maximum Size: {{fish.regulations.size_max}}<br>
+            Minimum Weight (lbs): {{fish.regulations.weight_min}}<br>
+            Maximum Weight (lbs): {{fish.regulations.weight_max}}<br>
+            Daily Limit: {{fish.regulations.daily_total}}</dd>
+            <dt>Found In: </dt>
+            {% for lake in lakes%}
+            <a class="button" href="/lake/{{lake.pk}}/">{{lake.name}}</a>
+            {% endfor %}
     </dl>
 </div>
 
