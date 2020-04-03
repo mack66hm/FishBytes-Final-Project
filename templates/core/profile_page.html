@@ -15,7 +15,7 @@
 
 {% for catch in catches.all %}
 <div class='catch-div'>
-    <img src="/static/{{catch.image}}">
+    <img src='{{catch.image.url}}'>
     <p class='catch-info'> Fish: {{catch.fish}} </p>
     <p class='catch-info'> Size: {{catch.size}}</p>
     <p class='catch-info'> Weight: {{catch.weight}}</p>

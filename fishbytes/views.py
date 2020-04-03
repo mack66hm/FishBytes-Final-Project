@@ -45,10 +45,11 @@ def edit_catch(request, pk):
     catch = get_object_or_404(Catch, pk=pk)
     if request.method == 'POST':
         form = CatchForm(request.POST, instance=catch)
-        catch = form.save(commit=False)
-        catch.user = request.user
-        catch.save
-        return redirect('add-catch', pk=catch.pk)
+        if form.is_valid():
+            catch = form.save(commit=False)
+            catch.user = request.user
+            catch.save()
+            return redirect('profile-page')
     else: 
         form = CatchForm(instance=catch)
     return render(request, 'core/edit_catch.html', {'form': form}) 
