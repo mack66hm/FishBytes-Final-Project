@@ -69,15 +69,22 @@ p {
     padding: 1rem;
 }
 
+.fishes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
 .fishdeets {
     display: flex;
     flex-direction: column;
-    border: 6px solid black;
+    /* border: 6px solid black; */
     border-radius: 1rem;
-    width: 80%;
+    width: 45%;
     margin: auto;
     align-items: center;
     background-color: white;
+    box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
 }
 
 .fish-in-lake {
