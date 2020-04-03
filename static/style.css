@@ -93,7 +93,13 @@ body {
     width: 85%;
     border-radius: 2rem;
     box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
-    margin: .5rem;
+    
+}
+
+.fish-header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .info-div {

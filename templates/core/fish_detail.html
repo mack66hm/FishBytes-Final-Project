@@ -8,46 +8,24 @@
 </div>
 
 <div class="fish-div">
-    <div class="info-div">
-        <h3>Season: </h3>
-        <ul class="info">
-        <li>{{fish.season}}</li>
-        </ul>
-    </div>
-
-    <div class='info-div'>
-        <h3>Citation:</h3>
-        <ul class="info">
-        <li>{{fish.citation}}</li>
-        </ul>
-    </div>
-    
-    <div class="info-div">
-    <h3>Key Identifiers:</h3>
-    <ul class="info">
-    <li>{{fish.identifiers}}</li>
-    </ul>
-    </div>
-
-    <div class='info-div'>
-    <h3>Found In: </h3>
-    <ul class="info">
-    {% for lake in lakes%}
-    <li><a href="/lake/{{lake.pk}}/">{{lake.name}}</a></li>
-    {% endfor %}
-    </ul>
-    </div>
-
-    <div class ="info-div">
-    <h3>Regulations:</h3>
-    <ul class="info">
-    <li>Minimum Size: {{fish.regulations.size_min}}</li>
-    <li>Maximum Size: {{fish.regulations.size_max}}</li>
-    <li>Minimum Weight (lbs): {{fish.regulations.weight_min}}</li>
-    <li>Maximum Weight (lbs): {{fish.regulations.weight_max}}</li> 
-    <li>Daily Limit: {{fish.regulations.daily_total}}</li>
-    </ul>
-    </div>
+    <dl>
+        <dt>Season: </dt>
+        <dd>{{fish.season}}</dd>
+        <dt>Citation:</dt>
+        <dd>{{fish.citation}}</dd>
+        <dt>Key Identifiers:</dt>
+        <dd>{{fish.identifiers}}</dd>
+        <dt>Found In: </dt>
+        {% for lake in lakes%}
+        <dd><a href="/lake/{{lake.pk}}/">{{lake.name}}</a></dd>
+        {% endfor %}
+        <dt>Regulations:</dt>
+        <dd>Minimum Size: {{fish.regulations.size_min}}<br>
+        Maximum Size: {{fish.regulations.size_max}}<br>
+        Minimum Weight (lbs): {{fish.regulations.weight_min}}<br>
+        Maximum Weight (lbs): {{fish.regulations.weight_max}}<br>
+        Daily Limit: {{fish.regulations.daily_total}}</dd>
+    </dl>
 </div>
 
 {% endblock %}
