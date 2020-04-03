@@ -48,6 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'mapbox_location_field',
+    'storages',
+
+
     # Third-party
     'debug_toolbar',
     'django_extensions',
@@ -181,9 +185,10 @@ STATICFILES_DIRS = [
 ]
 
 if env('USE_S3'):
-    AWS_ACCESS_KEY_ID = 'AKIA4UR23XL5FYV6TJAE'
-    AWS_SECRET_ACCESS_KEY = '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'
-    AWS_STORAGE_BUCKET_NAME = 'fishbytes-assets'
+    AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+    AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
+
     AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
     AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400'
@@ -191,6 +196,7 @@ if env('USE_S3'):
     DEFAULT_FILE_STORAGE = 'config.storage_backends.MediaStorage'
 
 
+MAPBOX_KEY = 'pk.eyJ1IjoibWFjazY2aG0iLCJhIjoiY2s4aHM5MmxhMDQxbDNnbWs1bGlsbTBiMCJ9.LZq97jXnhp0OMxyPjm0SzQ'
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())

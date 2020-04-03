@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load mapbox_location_field_tags %}
+{% location_field_includes %}
+{% include_jquery %}
 
 {% block content %}
 
 <div class='profile-header'>
 <h3 class='username-profile'>Welcome {{ user.username }}!</h2>
-
     <a class="button button-block" href= "{% url 'add-catch' %}">
     Add A New Catch
     </a>
-
 </div>
+
 <div class="fishes">
 {% for catch in catches.all %}
     <div class='fishdeets'>

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<body>
+    <div id='map' style='width: 700px; height: 700px;'></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoibWFjazY2aG0iLCJhIjoiY2s4ZXowYnJmMDFseDNmcGhjbmg4ODc4cyJ9.17aD7Ep5mTEgYqTSKkwzUw';
+        var map = new mapboxgl.Map({
+            container: 'map', // container id
+            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+            center: [-79.016569, 35.735554], // starting position [lng, lat]
+            zoom: 11 // starting zoom
+        });
+        var geojson = {
+            type: 'FeatureCollection',
+            features: [{
+                type: 'Feature',
+                location: {
+                    type: 'Point',
+                    coordinates: [-77.032, 38.913]
+                },
+                properties: {
+                    title: 'Mapbox',
+                    description: 'Washington, D.C.'
+                }
+            },
+            {
+                type: 'Feature',
+                location: {
+                    type: 'Point',
+                    coordinates: [-122.414, 37.776]
+                },
+                properties: {
+                    title: 'Mapbox',
+                    description: 'San Francisco, California'
+                }
+            }]
+        };
+    </script>
+</body>
+{% endblock %}
+
+</html>
