@@ -1,47 +1,81 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
+{% load mapbox_location_field_tags %}
+{% location_field_includes %}
+{% include_jquery %}
 
 {% block content %}
+<p>see the map</p>
+<div>
+<head>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 16rem;
+            bottom: 0;
+            width: 100%;
+        } 
+    </style>
+</head>
 
 <body>
-    <div id='map' style='width: 700px; height: 700px;'></div>
-    <script>
-        mapboxgl.accessToken = 'pk.eyJ1IjoibWFjazY2aG0iLCJhIjoiY2s4ZXowYnJmMDFseDNmcGhjbmg4ODc4cyJ9.17aD7Ep5mTEgYqTSKkwzUw';
-        var map = new mapboxgl.Map({
-            container: 'map', // container id
-            style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
-            center: [-79.016569, 35.735554], // starting position [lng, lat]
-            zoom: 11 // starting zoom
-        });
-        var geojson = {
-            type: 'FeatureCollection',
-            features: [{
-                type: 'Feature',
-                location: {
-                    type: 'Point',
-                    coordinates: [-77.032, 38.913]
-                },
-                properties: {
-                    title: 'Mapbox',
-                    description: 'Washington, D.C.'
-                }
-            },
-            {
-                type: 'Feature',
-                location: {
-                    type: 'Point',
-                    coordinates: [-122.414, 37.776]
-                },
-                properties: {
-                    title: 'Mapbox',
-                    description: 'San Francisco, California'
-                }
-            }]
-        };
-    </script>
-</body>
-{% endblock %}
+    <p>{{lake_center}}</p>
+    <div id="map"></div>
 
+    {% autoescape off %}
+    <script>    
+
+    let mapFeatures = {{mapFeatures}}
+    let lakeCenter = {{lake_center}}
+    </script>
+    {% endautoescape %}
+
+    <script>
+        mapboxgl.accessToken = "pk.eyJ1IjoibWFjazY2aG0iLCJhIjoiY2s4ZXowYnJmMDFseDNmcGhjbmg4ODc4cyJ9.17aD7Ep5mTEgYqTSKkwzUw";
+
+        /* Map: This represents the map on the page. */
+        let map = new mapboxgl.Map({
+            container: "map",
+            style: "mapbox://styles/mapbox/outdoors-v11",
+            zoom: 9,
+            center: lakeCenter
+        });
+        map.on("load", function () {
+            /* Image: An image is loaded and added to the map. */
+            map.loadImage("https://i.imgur.com/MK4NUzI.png", function (error, image) {
+                if (error) throw error;
+                map.addImage("custom-marker", image);
+                /* Style layer: A style layer ties together the source and image and specifies how they are displayed on the map. */
+                map.addLayer({
+                    id: "markers",
+                    type: "symbol",
+                    /* Source: A data source specifies the geographic coordinate where the image marker gets placed. */
+                    source: {
+                        type: "geojson",
+                        data: {
+                            type: 'FeatureCollection',
+                            features: mapFeatures
+                               
+                                
+                            
+                        }
+                    },
+                    layout: {
+                        "icon-image": "custom-marker",
+                    }
+                });
+            });
+        });
+
+    </script>
+    </div>
+
+{% endblock %}
 </html>
