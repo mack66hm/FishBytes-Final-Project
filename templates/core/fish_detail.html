@@ -4,37 +4,48 @@
 {% block content %}
 
 <div class="fish-div">
+    <h4>{{fish.name}}</h4>
     <img src="/static/{{fish.img}}" class= "fish-img">
-    <p class="fish-name">{{fish.name}}</p>
 
     <div class="season-div">
         <p class='season'>Season: </p>
+        <ul class="info">
         <li>{{fish.season}}</li>
+        </ul>
     </div>
 
     <div class='citation-div'>
         <p class='citation'>Citation: </p>
+        <ul class="info">
         <li>{{fish.citation}}</li>
-
+        </ul>
+    </div>
+    
     <div class="identifiers-div">
     <p class='identifiers'>Key Identifiers:</p> 
+    <ul class="info">
     <li>{{fish.identifiers}}</li>
+    </ul>
     </div>
 
     <div class='found-in-div'>
     <p class='found-in'>Found In: </p>
+    <ul class="info">
     {% for lake in lakes%}
     <li><a href="/lake/{{lake.pk}}/">{{lake.name}}</a></li>
     {% endfor %}
+    </ul>
     </div>
 
     <div class ="regulation-div">
     <p class="regulation">Regulations:</p>
+    <ul class="info">
     <li>Minimum Size: {{fish.regulations.size_min}}</li>
     <li>Maximum Size: {{fish.regulations.size_max}}</li>
     <li>Minimum Weight (lbs): {{fish.regulations.weight_min}}</li>
     <li>Maximum Weight (lbs): {{fish.regulations.weight_max}}</li> 
     <li>Daily Limit: {{fish.regulations.daily_total}}</li>
+    </ul>
     </div>
 </div>
 
