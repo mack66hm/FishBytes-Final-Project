@@ -26,21 +26,21 @@
     </div>
 </div>
 <div class="fishes">
-{% for fish in fishes %}
-<div class='fishdeets'>
-    <h3>{{ fish.name }}</h3>
-    <a href="/fish/{{fish.pk}}/">
-        <img class="card-image" src="/static/{{fish.img}}">
-    </a>
-    <div class="deets">
-        {{fish.identifiers}}
-    </div>
-    <h5>Season</h5>
-        {{fish.season}}
-    <h5>Records</h5>
-        {{fish.citation}}
-    </div>
-</div>
-{% endfor %}
+    {% for fish in fishes %}
+        <div class='fishdeets'>
+            <h3>{{ fish.name }}</h3>
+            <a href="/fish/{{fish.pk}}/">
+                <img class="card-image" src="/static/{{fish.img}}">
+            </a>
+            <div class="deets">
+                {{fish.identifiers}}
+            
+            <h5>Season</h5>
+                {{fish.season}}
+            <h5>Records</h5>
+                {{fish.citation}}
+            </div>
+        </div>
+    {% endfor %}
 </div>
 {% endblock %}
