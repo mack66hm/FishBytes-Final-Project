@@ -1,4 +1,4 @@
-* {
+body {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -57,19 +57,7 @@ p {
     width: 800px;
 }
 
-.dropdown {
-    margin: 1rem;
-    margin-top: 3rem;
-    background-color: lightslategrey;
-}
 
-.dropdown-menu {
-    background-color: rgb(176, 176, 176);
-}
-
-.dropdown-trigger {
-    background-color: purple
-}
 
 .lake-name {
     padding: 1rem;
@@ -79,6 +67,24 @@ p {
 
 .lake-description {
     padding: 1rem;
+}
+
+.fishes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.fishdeets {
+    display: flex;
+    flex-direction: column;
+    /* border: 6px solid black; */
+    border-radius: 1rem;
+    width: 45%;
+    margin: auto;
+    align-items: center;
+    background-color: white;
+    box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
 }
 
 .fish-in-lake {
@@ -101,9 +107,10 @@ p {
     font-size: 48px;
 }
 
-.identifiers-div {
-
+.dropdown {
+    margin-top: .5rem;
 }
+
 
 .identifiers {
     text-decoration: underline;
@@ -148,14 +155,12 @@ p {
     text-align: center;
 }
 
-.save-button {
-    background-color: purple;
-    margin-top: 1rem;
-    width: 5rem;
-    height: 2rem;
-}
-
 .profile-header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
     border-bottom: royalblue solid 1px;
     padding: 1rem;
 }
@@ -163,13 +168,6 @@ p {
 .username-profile {
     padding: 2rem;
     font-size: 50px;
-}
-
-.add-button {
-    background-color: rebeccapurple;
-    margin: 2rem;
-    border-radius: 2rem;
-    padding:1rem
 }
 
 .catch-info {
@@ -181,25 +179,12 @@ p {
 }
 
 .catch-div {
-    margin:1rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
     padding-top: 1rem;
-    font-size: 28px;
-}
-
-.edit-button {
-    padding: 1rem;
-    background-color: rebeccapurple;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.delete-button {
-    padding: 1rem;
-    background-color: rebeccapurple;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    border: 3px solid black;
+    width: 85%
 }
 
 .button-div {
@@ -207,5 +192,19 @@ p {
     justify-content: space-between;
 }
 
+.starter{
+    border: 5px solid aquamarine !important;
+    width: 60%;
+    margin: auto;
+    font-weight: bold;
+    align-content: center;
+}
 
-
+.questions{
+    border: 5px solid red !important;
+    width: 60%;
+    padding: 1rem;
+    margin: auto;
+    font-weight: bold;
+    align-content: center;
+}

@@ -4,15 +4,17 @@
 {% endblock %}
 {% block content %}
 <div class="tabs">
-    <div class="tabs-pane active" id="tab-99">
+    <div class="tabs-pane starter active" id="tab-99">
         Let's figure out waht you've caught!
+        <br>
         <nav class="tabs-nav">
-        <a href="#tab-1">Start</a>
+        <a id="start" href="#tab-1">Start</a>
         </nav>
     </div>
     {% for question in questions %}
-    <div class="tabs-pane" id="tab-{{question.pos}}">
+    <div class="tabs-pane questions" id="tab-{{question.pos}}">
     {{question.body}}
+        <br>
         <button class="button yes" id="{{question.yesPos}}">Yes</button>
         <button class="button no" id="{{question.noPos}}">No</button>
     </div>
