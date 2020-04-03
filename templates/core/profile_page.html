@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load mapbox_location_field_tags %}
-{% location_field_includes %}
-{% include_jquery %}
+
 
 {% block content %}
 
 <div class='profile-header'>
 
-    <h2 class='username-profile'>Welcome {{ user.username }}!</h2>
-    <a class='add-button' href="{% url 'add-catch' %}">Add New Catch</a>
+<h2 class='username-profile'>Welcome {{ user.username }}!</h2>
+<a class='add-button' href= "{% url 'add-catch' %}">Add New Catch</a>
 
 </div>
 
@@ -21,15 +19,10 @@
     <p class='catch-info'> Weight: {{catch.weight}}</p>
     <p class='catch-info'> Lake: {{catch.lake}}</p>
     <p class='catch-info date'> Date: {{catch.date}}</p>
-    <script src="/static/maps.js"defer></script>
-
+    <a href="{% url 'show-map' pk=catch.lake.pk %}">view on map</a>
     <div class='button-div'>
-        <a href="{% url 'edit-catch' pk=catch.pk %}">
-            <buton class='edit-button'>Edit</button>
-        </a>
-        <a href="{% url 'delete-catch' pk=catch.pk %}">
-            <buton class='delete-button'>Delete</button>
-        </a>
+        <a href= "{% url 'edit-catch' pk=catch.pk %}"><buton class='edit-button'>Edit</button></a>
+        <a href= "{% url 'delete-catch' pk=catch.pk %}"><buton class='delete-button'>Delete</button></a>
     </div>
 
 </div>
