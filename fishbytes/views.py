@@ -64,7 +64,23 @@ def delete_catch(request, pk):
     catch.delete()
     return redirect('profile-page')
 
-def show_map(request):
-    mapbox_access_token = 'pk.mapbox_access_token'
-    return render(request, 'core/maps.html', 
-                  { 'mapbox_access_token': mapbox_access_token })
+@login_required
+def show_map(request, pk):
+    lake = get_object_or_404(Lake, pk=pk)
+    lake_center = [lake.location[1], lake.location[0]]
+    map = 'pk.mapbox_access_token'
+    catches = Catch.objects.filter(user=request.user, lake=lake)
+    map_features = [{'type': 'Feature',
+                            'properties': {},
+                            'geometry': {
+                            'type': "Point",
+                            'coordinates': [str(catch.longitude), str(catch.latitude)],
+                                    }
+                                } for catch in catches]
+    context={ 
+        'map': map, 
+        'catches': catches, 
+        'mapFeatures': map_features, 
+        'lake': lake, 
+        'lake_center': lake_center }
+    return render(request, 'core/maps.html', context)
