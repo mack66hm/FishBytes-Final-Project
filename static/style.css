@@ -57,11 +57,7 @@ p {
     width: 800px;
 }
 
-.dropdown-front{
-    display: flex;
-    justify-content: center;
-    margin-top: .5rem;
-}
+
 
 .lake-name {
     padding: 1rem;
@@ -71,6 +67,16 @@ p {
 
 .lake-description {
     padding: 1rem;
+}
+
+.fishdeets {
+    display: flex;
+    flex-direction: column;
+    border: 6px solid black;
+    border-radius: 1rem;
+    width: 80%;
+    margin: auto;
+    align-items: center;
 }
 
 .fish-in-lake {
@@ -93,9 +99,10 @@ p {
     font-size: 48px;
 }
 
-.identifiers-div {
-
+.dropdown {
+    margin-top: .5rem;
 }
+
 
 .identifiers {
     text-decoration: underline;
