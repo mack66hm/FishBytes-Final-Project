@@ -88,25 +88,26 @@
         {% endfor %}
     </div>
 </div>
-
+<div class="fishes">
 {% for fish in fishes %}
 <div class='fishdeets'>
     <h3>{{ fish.name }}</h3>
     <div>
-        <img src="/static/{{fish.img}}">
+        <a href="/fish/{{fish.pk}}/">
+            <img src="/static/{{fish.img}}">
+        </a>
     </div>
-    <h3>Description</h3>
-    <div>
+    <div class="deets">
         {{fish.identifiers}}
     </div>
-    <h3>Season</h3>
-    {{fish.season}}
-    <h3>Records</h3>
-    <div>
+    <h5>Season</h5>
+        {{fish.season}}
+    <h5>Records</h5>
         {{fish.citation}}
     </div>
-    <h3><a href="/fish/{{fish.pk}}/">More Information</a></h3>
 </div>
 {% endfor %}
+
 </body>
 {% endblock %}
+
