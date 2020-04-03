@@ -48,6 +48,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'mapbox_location_field',
+    'storages',
+
+
     # Third-party
     'debug_toolbar',
     'django_extensions',
@@ -191,6 +195,7 @@ if env('USE_S3'):
     DEFAULT_FILE_STORAGE = 'config.storage_backends.MediaStorage'
 
 
+MAPBOX_KEY = 'pk.eyJ1IjoibWFjazY2aG0iLCJhIjoiY2s4aHM5MmxhMDQxbDNnbWs1bGlsbTBiMCJ9.LZq97jXnhp0OMxyPjm0SzQ'
 # Configure Django App for Heroku.
 import django_heroku
 django_heroku.settings(locals())

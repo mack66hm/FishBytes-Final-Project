@@ -3,7 +3,7 @@
 
 {% block content %}
 
-<div class= 'add-catch-form'>
+<div class='add-catch-form'>
     <form method='POST' class='catch' enctype="multipart/form-data">
         <h2 class='catch-form-title'>Record Your Catch</h2>
         {% csrf_token %} {{ form.as_p }}
