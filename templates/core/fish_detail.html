@@ -2,34 +2,35 @@
 {% load static %}
 
 {% block content %}
+<div class="fish-header">
+<h2>{{fish.name}}</h2>
+<img src="/static/{{fish.img}}" class= "fish-img">
+</div>
 
 <div class="fish-div">
-    <h4>{{fish.name}}</h4>
-    <img src="/static/{{fish.img}}" class= "fish-img">
-
-    <div class="season-div">
-        <p class='season'>Season: </p>
+    <div class="info-div">
+        <h3>Season: </h3>
         <ul class="info">
         <li>{{fish.season}}</li>
         </ul>
     </div>
 
-    <div class='citation-div'>
-        <p class='citation'>Citation: </p>
+    <div class='info-div'>
+        <h3>Citation:</h3>
         <ul class="info">
         <li>{{fish.citation}}</li>
         </ul>
     </div>
     
-    <div class="identifiers-div">
-    <p class='identifiers'>Key Identifiers:</p> 
+    <div class="info-div">
+    <h3>Key Identifiers:</h3>
     <ul class="info">
     <li>{{fish.identifiers}}</li>
     </ul>
     </div>
 
-    <div class='found-in-div'>
-    <p class='found-in'>Found In: </p>
+    <div class='info-div'>
+    <h3>Found In: </h3>
     <ul class="info">
     {% for lake in lakes%}
     <li><a href="/lake/{{lake.pk}}/">{{lake.name}}</a></li>
@@ -37,8 +38,8 @@
     </ul>
     </div>
 
-    <div class ="regulation-div">
-    <p class="regulation">Regulations:</p>
+    <div class ="info-div">
+    <h3>Regulations:</h3>
     <ul class="info">
     <li>Minimum Size: {{fish.regulations.size_min}}</li>
     <li>Maximum Size: {{fish.regulations.size_max}}</li>

@@ -6,7 +6,6 @@ body {
     background-color: rgb(245, 227, 204);
 }
 
-
 .title {
     font-style: italic;
     font-size: 150px;
@@ -53,8 +52,6 @@ body {
     width: 800px;
 }
 
-
-
 .lake-name {
     padding: 1rem;
     font-size: 48px;
@@ -88,9 +85,8 @@ body {
 }
 
 .fish-div {
-    border: solid black .5rem;
-    font-size: 20px;
-    text-align: center;
+    text-align: left;
+    margin: .5rem;
 }
 
 .fish-img {
@@ -98,6 +94,10 @@ body {
     border-radius: 2rem;
     box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
     margin: .5rem;
+}
+
+.info-div {
+    margin: .25rem;
 }
 
 .regs {
@@ -109,10 +109,6 @@ body {
     height: fit-content;
 }
 
-.fish-name {
-    font-size: 48px;
-}
-
 .dropdown {
     margin-top: .5rem;
 }
@@ -120,38 +116,6 @@ body {
 .info {
     list-style: none;
 }
-
-.identifiers {
-    text-decoration: underline;
-    font-size: 30px;
-    margin-top: 1rem;
-}
-
-.regulation {
-    margin-top: 1rem;
-    text-decoration: underline;
-    font-size: 30px;
-}
-
-.season {
-    text-decoration: underline;
-    font-size: 30px;
-    margin-top: 1rem;
-}
-
-.citation {
-    text-decoration: underline;
-    font-size: 30px;
-    margin-top: 1rem;
-}
-
-.found-in {
-    text-decoration: underline;
-    font-size: 30px;
-    margin-top: 1rem;
-}
-
-
 
 .add-catch-form {
     padding: 1rem;
