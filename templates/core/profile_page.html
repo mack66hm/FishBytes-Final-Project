@@ -5,13 +5,13 @@
 {% block content %}
 
 <div class='profile-header'>
-<h3 class='username-profile'>Welcome {{ user.username }}!</h2>
 
-    <a class="button button-block" href= "{% url 'add-catch' %}">
-    Add A New Catch
-    </a>
+<h2 class='username-profile'>Welcome {{ user.username }}!</h2>
+<a class='add-button' href= "{% url 'add-catch' %}">Add New Catch</a>
+
 
 </div>
+
 <div class="fishes">
     {% for catch in catches.all %}
     <div class='fishdeets'>

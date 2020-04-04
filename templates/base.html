@@ -1,4 +1,8 @@
 {% load static %}
+{% load mapbox_location_field_tags %}
+{% location_field_includes %}
+{% include_jquery %}
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +16,8 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
     <script src="https://cdn.shoelace.style/1.0.0-beta.25/shoelace.js" defer></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
     {% block meta %}{% endblock %}
 
     <title>FishBytes</title>

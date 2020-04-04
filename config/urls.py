@@ -28,6 +28,7 @@ urlpatterns = [
     path('catch/<int:pk>/edit/', views.edit_catch, name='edit-catch'),
     path('profile/', views.profile_page, name='profile-page'),
     path('profile/<int:pk>/delete/', views.delete_catch, name='delete-catch'),
+    path('maps/<int:pk>/', views.show_map, name='show-map'),
     path('fishid/', views.fishid, name='fishid'),
 ]
 

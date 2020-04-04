@@ -17,6 +17,7 @@ django-registration-redux = "*"
 sendgrid = "*"
 boto3 = "*"
 django-storages = "*"
+django-mapbox-location-field = "*"
 
 [requires]
 python_version = "3.7"

@@ -45,10 +45,11 @@ def edit_catch(request, pk):
     catch = get_object_or_404(Catch, pk=pk)
     if request.method == 'POST':
         form = CatchForm(request.POST, instance=catch)
-        catch = form.save(commit=False)
-        catch.user = request.user
-        catch.save
-        return redirect('add-catch', pk=catch.pk)
+        if form.is_valid():
+            catch = form.save(commit=False)
+            catch.user = request.user
+            catch.save()
+            return redirect('profile-page')
     else: 
         form = CatchForm(instance=catch)
     return render(request, 'core/edit_catch.html', {'form': form}) 
@@ -62,3 +63,24 @@ def delete_catch(request, pk):
     catch = get_object_or_404(Catch, pk=pk)
     catch.delete()
     return redirect('profile-page')
+
+@login_required
+def show_map(request, pk):
+    lake = get_object_or_404(Lake, pk=pk)
+    lake_center = [lake.location[1], lake.location[0]]
+    map = 'pk.mapbox_access_token'
+    catches = Catch.objects.filter(user=request.user, lake=lake)
+    map_features = [{'type': 'Feature',
+                            'properties': {},
+                            'geometry': {
+                            'type': "Point",
+                            'coordinates': [str(catch.longitude), str(catch.latitude)],
+                                    }
+                                } for catch in catches]
+    context={ 
+        'map': map, 
+        'catches': catches, 
+        'mapFeatures': map_features, 
+        'lake': lake, 
+        'lake_center': lake_center }
+    return render(request, 'core/maps.html', context)
