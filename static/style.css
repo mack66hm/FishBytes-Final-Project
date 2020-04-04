@@ -62,10 +62,21 @@ body {
     padding: 1rem;
 }
 
+.lake-img{
+    margin-top: 2rem;
+    border-radius: 1rem;
+    box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
+}
+
+.lake-header h1 {
+    font-weight: bolder;
+}
+
 .fishes {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    margin: 1rem;
 }
 
 .fishdeets {
@@ -80,8 +91,10 @@ body {
     box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
 }
 
-.fish-in-lake {
-    padding: 1rem;
+.lake-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .fish-div {
@@ -104,6 +117,7 @@ body {
 
 .fish-header h2 {
     margin: 1rem;
+    margin-bottom: 2rem;
     font-weight: bolder;
 }
 
@@ -116,8 +130,7 @@ body {
 }
 
 .card-image {
-    width: fit-content;
-    height: fit-content;
+    margin-bottom: 1rem;
 }
 
 .info {

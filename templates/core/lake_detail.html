@@ -6,15 +6,13 @@
 
 <br>
 <br>
-<h1>{{ lake.name }}</h1>
-
-<img src="/static/{{lake.img}}" class= "lake-img">
-<div class="lake-description">
-    a description goes here
-</div>
-
-<div class="fish-in-lake">
-<h2>Fish In {{lake.name}}</h2>
+<div class="lake-header">
+    <h1>{{ lake.name }}</h1>
+    <img src="/static/{{lake.img}}" class= "lake-img">
+        <div class="lake-description">
+            a description goes here
+        </div>
+    <h2>Fish In {{lake.name}}</h2>
 </div>
 
 <div class="dropdown">
@@ -33,12 +31,6 @@
                 <img class="card-image" src="/static/{{fish.img}}">
             </a>
             <div class="deets">
-                {{fish.identifiers}}
-            
-            <h5>Season</h5>
-                {{fish.season}}
-            <h5>Records</h5>
-                {{fish.citation}}
             </div>
         </div>
     {% endfor %}
