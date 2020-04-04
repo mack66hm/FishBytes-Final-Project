@@ -189,3 +189,12 @@ body {
     font-weight: bold;
     align-content: center;
 }
+
+.dropdown {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown .dropdown-menu{
+    left:auto;
+}
