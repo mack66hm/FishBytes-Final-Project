@@ -98,8 +98,13 @@ body {
 
 .fish-header {
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
+}
+
+.fish-header h2 {
+    margin: 1rem;
+    font-weight: bolder;
 }
 
 .info-div {
@@ -113,10 +118,6 @@ body {
 .card-image {
     width: fit-content;
     height: fit-content;
-}
-
-.dropdown {
-    margin-top: .5rem;
 }
 
 .info {
@@ -192,6 +193,7 @@ body {
 
 .dropdown {
     display: flex;
+    margin-top: .5rem;
     justify-content: center;
 }
 
