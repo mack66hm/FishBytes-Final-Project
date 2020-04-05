@@ -151,7 +151,9 @@ body {
 
 .profile-header {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    width: 85%;
+    margin: auto;
     justify-content: center;
     text-align: center;
 }
