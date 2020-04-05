@@ -18,14 +18,14 @@ body {
 }
 
 .header {
-    background-color: darkgreen;
-    border: darkgreen solid 1rem;
+    background-color: black;
+    border: black solid 1rem;
 }
 
 .link {
     font-size: 20px;
     color: rgb(245, 227, 204);
-    background-color: darkgreen;
+    background-color: black;
     display: flex;
     justify-content: space-between;
 }
@@ -90,6 +90,7 @@ body {
     align-items: center;
     background-color: white;
     box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
+    height: 550px;
 }
 
 .lake-header {
@@ -132,6 +133,12 @@ body {
 
 .card-image {
     margin-bottom: 1rem;
+    max-height:100%;
+    align-items: center;
+}
+
+.catch-image-div {
+    height: 21rem;
 }
 
 .info {
