@@ -150,12 +150,9 @@ body {
 
 .profile-header {
     display: flex;
-    align-content: center;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    flex-wrap: wrap;
-    border-bottom: royalblue solid 1px;
-    padding: 1rem;
 }
 
 .username-profile {
