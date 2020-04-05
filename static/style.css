@@ -6,10 +6,6 @@ body {
     background-color: rgb(245, 227, 204);
 }
 
-p {
-    margin: 0;
-}
-
 .title {
     font-style: italic;
     font-size: 150px;
@@ -21,7 +17,6 @@ p {
 }
 
 .header {
-    /* height: 12rem; */
     background-color: darkgreen;
     border: darkgreen solid 1rem;
 }
@@ -57,8 +52,6 @@ p {
     width: 800px;
 }
 
-
-
 .lake-name {
     padding: 1rem;
     font-size: 48px;
@@ -69,80 +62,80 @@ p {
     padding: 1rem;
 }
 
+.lake-img{
+    margin-top: 2rem;
+    border-radius: 1rem;
+    box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
+}
+
+.lake-header h1 {
+    font-weight: bolder;
+}
+
 .fishes {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    margin: 1rem;
 }
 
 .fishdeets {
     display: flex;
     flex-direction: column;
-    /* border: 6px solid black; */
     border-radius: 1rem;
     width: 45%;
     margin: auto;
+    margin-top: 1rem;
     align-items: center;
     background-color: white;
     box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
 }
 
-.fish-in-lake {
-    padding: 1rem;
+.lake-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .fish-div {
-    border: solid black .5rem;
-    font-size: 20px;
-    text-align: center;
+    text-align: left;
+    margin: .5rem;
 }
 
 .fish-img {
-    width: 800px;
-    border-radius: 7rem;
-    border: solid black 3px
+    width: 85%;
+    border-radius: 2rem;
+    box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
+    
 }
 
-.fish-name {
-    font-size: 48px;
+.fish-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.dropdown {
-    margin-top: .5rem;
+.fish-header h2 {
+    margin: 1rem;
+    margin-bottom: 2rem;
+    font-weight: bolder;
 }
 
-
-.identifiers {
-    text-decoration: underline;
-    font-size: 30px;
-    margin-top: 1rem;
+.info-div {
+    margin: .25rem;
 }
 
-.regulation {
-    margin-top: 1rem;
-    text-decoration: underline;
-    font-size: 30px;
+.regs {
+    list-style: none;
 }
 
-.season {
-    text-decoration: underline;
-    font-size: 30px;
-    margin-top: 1rem;
+.card-image {
+    margin-bottom: 1rem;
 }
 
-.citation {
-    text-decoration: underline;
-    font-size: 30px;
-    margin-top: 1rem;
+.info {
+    list-style: none;
 }
-
-.found-in {
-    text-decoration: underline;
-    font-size: 30px;
-    margin-top: 1rem;
-}
-
-
 
 .add-catch-form {
     padding: 1rem;
@@ -171,7 +164,7 @@ p {
 }
 
 .catch-info {
-    margin: 1rem;
+    margin: .25rem;
 }
 
 .date {
@@ -189,7 +182,9 @@ p {
 
 .button-div {
     display: flex;
-    justify-content: space-between;
+    margin: .5rem;
+    width: 85%;
+    justify-content: space-evenly;
 }
 
 .starter{
@@ -207,4 +202,14 @@ p {
     margin: auto;
     font-weight: bold;
     align-content: center;
+}
+
+.dropdown {
+    display: flex;
+    margin-top: .5rem;
+    justify-content: center;
+}
+
+.dropdown .dropdown-menu{
+    left:auto;
 }

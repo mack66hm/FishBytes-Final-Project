@@ -2,40 +2,30 @@
 {% load static %}
 
 {% block content %}
+<div class="fish-header">
+<h2>{{fish.name}}</h2>
+<img src="/static/{{fish.img}}" class= "fish-img">
+</div>
 
 <div class="fish-div">
-    <img src="/static/{{fish.img}}" class= "fish-img">
-    <p class="fish-name">{{fish.name}}</p>
-
-    <div class="season-div">
-        <p class='season'>Season: </p>
-        <li>{{fish.season}}</li>
-    </div>
-
-    <div class='citation-div'>
-        <p class='citation'>Citation: </p>
-        <li>{{fish.citation}}</li>
-
-    <div class="identifiers-div">
-    <p class='identifiers'>Key Identifiers:</p> 
-    <li>{{fish.identifiers}}</li>
-    </div>
-
-    <div class='found-in-div'>
-    <p class='found-in'>Found In: </p>
-    {% for lake in lakes%}
-    <li><a href="/lake/{{lake.pk}}/">{{lake.name}}</a></li>
-    {% endfor %}
-    </div>
-
-    <div class ="regulation-div">
-    <p class="regulation">Regulations:</p>
-    <li>Minimum Size: {{fish.regulations.size_min}}</li>
-    <li>Maximum Size: {{fish.regulations.size_max}}</li>
-    <li>Minimum Weight (lbs): {{fish.regulations.weight_min}}</li>
-    <li>Maximum Weight (lbs): {{fish.regulations.weight_max}}</li> 
-    <li>Daily Limit: {{fish.regulations.daily_total}}</li>
-    </div>
+    <dl>
+        <dt>Season: </dt>
+        <dd>{{fish.season}}</dd>
+        <dt>Citation:</dt>
+        <dd>{{fish.citation}}</dd>
+        <dt>Key Identifiers:</dt>
+        <dd>{{fish.identifiers}}</dd>
+        <dt>Regulations:</dt>
+        <dd>Minimum Size: {{fish.regulations.size_min}}<br>
+            Maximum Size: {{fish.regulations.size_max}}<br>
+            Minimum Weight (lbs): {{fish.regulations.weight_min}}<br>
+            Maximum Weight (lbs): {{fish.regulations.weight_max}}<br>
+            Daily Limit: {{fish.regulations.daily_total}}</dd>
+            <dt>Found In: </dt>
+            {% for lake in lakes%}
+            <a class="button" href="/lake/{{lake.pk}}/">{{lake.name}}</a>
+            {% endfor %}
+    </dl>
 </div>
 
 {% endblock %}
