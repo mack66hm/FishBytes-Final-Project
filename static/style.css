@@ -6,6 +6,10 @@ body {
     background-color: rgb(245, 227, 204);
 }
 
+/* @font-face {
+    font-family: "SomethingFishy";
+    src: url("1001fonts.com/something-fishy-font") format("fishy1");  } */
+
 .title {
     border-radius: 1rem;
     font-style: italic;
@@ -90,7 +94,6 @@ body {
     align-items: center;
     background-color: white;
     box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
-    height: 550px;
 }
 
 .lake-header {
@@ -139,6 +142,19 @@ body {
 
 .catch-image-div {
     height: 21rem;
+}
+
+.catch-deets {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    width: 45%;
+    margin: auto;
+    margin-top: 1rem;
+    align-items: center;
+    background-color: white;
+    box-shadow: -10px -9px 19px 0px rgba(0,0,0,0.75);
+    height: 550px;
 }
 
 .info {
