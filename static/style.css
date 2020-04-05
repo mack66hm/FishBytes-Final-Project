@@ -7,6 +7,7 @@ body {
 }
 
 .title {
+    border-radius: 1rem;
     font-style: italic;
     font-size: 150px;
     text-align: center;
