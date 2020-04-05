@@ -188,20 +188,41 @@ body {
 }
 
 .starter{
-    border: 5px solid aquamarine !important;
-    width: 60%;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 2rem;
     font-weight: bold;
-    align-content: center;
+    align-items: center;
+    background-color: rgb(245, 227, 204);
+    border: 0px !important;
+    text-align: center;
+}
+
+.starter .tabs-nav {
+    margin-top: 1rem;
+    font-size: 1.25rem;
 }
 
 .questions{
-    border: 5px solid red !important;
-    width: 60%;
-    padding: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 2px 3px 23px 9px rgba(0,0,0,0.75);
+    width: 85%;
+    justify-content: center;
     margin: auto;
     font-weight: bold;
-    align-content: center;
+    background-color: white;
+    text-align: center;
+}
+
+.yes-no {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    margin-top: 1rem;
+    width: inherit;
 }
 
 .dropdown {
