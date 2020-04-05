@@ -5,8 +5,7 @@
 {% block content %}
 <div class="tabs">
     <div class="tabs-pane starter active" id="tab-99">
-        Let's figure out waht you've caught!
-        <br>
+        Let's figure out what you've caught!
         <nav class="tabs-nav">
         <a id="start" href="#tab-1">Start</a>
         </nav>
@@ -14,9 +13,10 @@
     {% for question in questions %}
     <div class="tabs-pane questions" id="tab-{{question.pos}}">
     {{question.body}}
-        <br>
-        <button class="button yes" id="{{question.yesPos}}">Yes</button>
-        <button class="button no" id="{{question.noPos}}">No</button>
+        <div class="yes-no">
+            <button class="button-lg yes" id="{{question.yesPos}}">Yes</button>
+            <button class="button-lg no" id="{{question.noPos}}">No</button>
+        </div>
     </div>
     {% endfor %}
 </div>

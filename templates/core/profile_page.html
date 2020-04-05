@@ -7,7 +7,7 @@
 <div class='profile-header'>
 
 <h2 class='username-profile'>Welcome {{ user.username }}!</h2>
-<a class='add-button' href= "{% url 'add-catch' %}">Add New Catch</a>
+<a class='button' href= "{% url 'add-catch' %}">Add New Catch</a>
 
 
 </div>
@@ -18,7 +18,7 @@
         <h5 class='catch-info'> {{catch.fish}} </h5>
         <img class="card-image" src="/static/{{catch.image}}">
         <p class='catch-info'> Size: {{catch.size}}||Weight: {{catch.weight}}</p>
-        <p class='catch-info'> Lake: {{catch.lake}}||Date: {{catch.date}}</p>
+        <p class='catch-info'> Lake: {{catch.lake.name}}||Date: {{catch.date}}</p>
         <div class="button-div">
             <a class="button" href= "{% url 'edit-catch' pk=catch.pk %}">
             Edit
