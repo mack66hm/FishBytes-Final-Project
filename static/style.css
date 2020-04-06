@@ -7,12 +7,6 @@ body {
 }
 
 
-@font-face {
-    font-family: 'touch';
-    src: url("/static/fonts/touch.ttf");
-}
-
-
 .title {
     display: flex;
     flex-wrap: wrap;
