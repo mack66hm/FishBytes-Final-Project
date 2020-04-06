@@ -5,38 +5,38 @@
 
 
 <body>
-    
- 
-<div class="lake-header">
-    <h1>{{ lake.name }}</h1>
-    <img src="/static/{{lake.img}}" class= "lake-img">
+
+
+    <div class="lake-header">
+        <h1>{{ lake.name }}</h1>
+        <img src="/static/{{lake.img}}" class="lake-img">
         <div class="lake-description">
-            a description goes here
+            <p>Select a fish to learn more. Or click FishID from the menu above to figure out what you've caught!</p>
+        </div>
+    </div>
+
+        <div class="fish-in-lake">
+            <h2>Fish In {{lake.name}}</h2>
         </div>
 
-<div class="fish-in-lake">
-    <h2>Fish In {{lake.name}}</h2>
-</div>
-
-<div class="dropdown">
-    <button type="button" class="dropdown-trigger">Please Select a Fish</button>
-    <div class="dropdown-menu">
-        {% for fish in fishes %}
-        <a href="/fish/{{fish.pk}}/">{{fish.name}}</a>
-        {% endfor %}
-    </div>
-</div>
-<div class="fishes">
-    {% for fish in fishes %}
-        <div class='fishdeets'>
-            <h3>{{ fish.name }}</h3>
-            <a href="/fish/{{fish.pk}}/">
-                <img class="card-image" src="/static/{{fish.img}}">
-            </a>
-            <div class="deets">
+        <div class="dropdown">
+            <button type="button" class="dropdown-trigger">Please Select a Fish</button>
+            <div class="dropdown-menu">
+                {% for fish in fishes %}
+                <a href="/fish/{{fish.pk}}/">{{fish.name}}</a>
+                {% endfor %}
             </div>
         </div>
-    {% endfor %}
-</div>
-{% endblock %}
-
+        <div class="fishes">
+            {% for fish in fishes %}
+            <div class='fishdeets'>
+                <h3>{{ fish.name }}</h3>
+                <a href="/fish/{{fish.pk}}/">
+                    <img class="card-image" src="/static/{{fish.img}}">
+                </a>
+                <div class="deets">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endblock %}
