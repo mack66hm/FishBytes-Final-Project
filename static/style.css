@@ -33,6 +33,10 @@ body {
     justify-content: space-between;
 }
 
+.blurb {
+    margin: 1rem;
+}
+
 .license {
     display: flex;
     justify-content: center;
