@@ -6,10 +6,6 @@ body {
     background-color: rgb(245, 227, 204);
 }
 
-/* @font-face {
-    font-family: "SomethingFishy";
-    src: url("1001fonts.com/something-fishy-font") format("fishy1.ttf");  }  */
-
 .title {
     display: flex;
     flex-wrap: wrap;
