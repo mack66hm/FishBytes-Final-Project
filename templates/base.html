@@ -6,6 +6,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,22 +23,30 @@
 
     <title>FishBytes</title>
 </head>
+<style>
+    @font-face {
+        font-family: 'touch';
+        src: url("/static/fonts/Something\ Fishy.ttf");
+    }
+</style>
+
 <body>
-    
+
     <header class="header">
         <h1 class="title">FishBytes</h1>
-    <div class="link">
-        <a class="link home" href="/">Home</a>
-        <a class="link profile" href= "{% url 'profile-page' %}">View Profile</a>
-        <a class="link" href="{% url 'fishid' %}">FishID</a>
-        <a class="link logout" href="http://fishbytes.herokuapp.com/accounts/login/?next=/profile/">Log Out</a>
-    </div>
+        <div class="link">
+            <a class="link home" href="/">Home</a>
+            <a class="link profile" href="{% url 'profile-page' %}">View Profile</a>
+            <a class="link" href="{% url 'fishid' %}">FishID</a>
+            <a class="link logout" href="http://fishbytes.herokuapp.com/accounts/login/?next=/profile/">Log Out</a>
+        </div>
     </header>
 
 
     <main>
         {% block content %}
-<h4 class="blurb">Welcome to Fishbytes! Your source for information of fish in lakes in the great state of North Carolina! Please select a lake from the dropdown menu below to get started.</h4>
+        <h4 class="blurb">Welcome to Fishbytes! Your source for information of fish in lakes in the great state of North
+            Carolina! Please select a lake from the dropdown menu below to get started.</h4>
         <div class="dropdown dropdown-right">
             <button type="button" class="dropdown-trigger">Please Select a Lake</button>
             <div class="dropdown-menu dropdown-front">
@@ -46,13 +55,15 @@
                 {% endfor %}
             </div>
         </div>
-        
+
         <div class="license">
-        <a class="license-link" href="http://www.eregulations.com/northcarolina/hunting-fishing/fishing-licenses/">Don't have a Fishing License? Click here to get one!</a>
+            <a class="license-link"
+                href="http://www.eregulations.com/northcarolina/hunting-fishing/fishing-licenses/">Don't have a Fishing
+                License? Click here to get one!</a>
         </div>
-        
+
         <div class="homepage-pic-div">
-        <img src="{% static 'Man-Fishing-in-Lake.jpg' %}" alt="My image" class="homepage-pic">
+            <img src="{% static 'Man-Fishing-in-Lake.jpg' %}" alt="My image" class="homepage-pic">
         </div>
 
         {% endblock %}
@@ -60,5 +71,5 @@
     </main>
 
 </body>
-</html>
 
+</html>
