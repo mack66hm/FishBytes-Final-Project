@@ -17,7 +17,9 @@
     <div class='catch-deets'>
         <h5 class='catch-info'> {{catch.fish}} </h5>
         <div class="catch-image-div">
+    {% if catch.image %}
         <img class="card-image" src="{{catch.image.url}}">
+    {% endif %}
         </div>
             <div class='size-weight'>
         <p class='catch-info'> Size (inches): {{catch.size}}</p>
