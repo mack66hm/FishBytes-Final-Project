@@ -6,6 +6,9 @@ body {
     background-color: rgb(245, 227, 204);
 }
 
+.titlelink:hover {
+    text-decoration: none;
+}
 
 .title {
     display: flex;
