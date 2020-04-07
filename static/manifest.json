@@ -4,7 +4,7 @@
 	"name" : "FishBytes",
 	"scope" : "/",
 	"display" : "standalone",
-	"start_url" : "https://peaceful-bastion-81254.herokuapp.com/",
+	"start_url" : "https://fishbytes.herokuapp.com/",
 	"short_name" : "FishBytes",
 	"theme_color" : "transparent",
 	"description" : "Easy, offline information for freshwater fishing in NC",
@@ -18,7 +18,7 @@
 			"sizes": "1240x600"
 
 		}],
-	"url" : "https://peaceful-bastion-81254.herokuapp.com/",
+	"url" : "https://fishbytes.herokuapp.com/",
 	"screenshots" : [],
 	"generated" : "true"
 }

@@ -3,10 +3,19 @@
 const CACHE = "pwabuilder-precache";
 const precacheFiles = [
     "/",
+    "/profile/",
     "/fishid/",
     "/static/style.css",
-    
-
+    "/lake/1/",
+    "/fish/1/",
+    "/fish/4/",
+    "/fish/7/",
+    "/fish/2/",
+    "/fish/5/",
+    "/fish/8/",
+    "/fish/3/",
+    "/fish/6/",
+    "/fish/9/"
 ];
 
 self.addEventListener("install", function (event) {
