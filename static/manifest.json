@@ -1,0 +1,24 @@
+{
+    "dir" : "ltr",
+	"lang" : "English",
+	"name" : "FishBytes",
+	"scope" : "/",
+	"display" : "standalone",
+	"start_url" : "https://fishbytes.herokuapp.com/",
+	"short_name" : "FishBytes",
+	"theme_color" : "transparent",
+	"description" : "Easy, offline information for freshwater fishing in NC",
+	"orientation" : "portrait",
+	"background_color" : "#003300",
+	"related_applications" : [],
+	"prefer_related_applications" : false,
+	"icons" : [
+		{
+			"src": "https://peaceful-bastion-81254.herokuapp.com/windows10/SplashScreen.scale-200.png.png",
+			"sizes": "1240x600"
+
+		}],
+	"url" : "https://fishbytes.herokuapp.com/",
+	"screenshots" : [],
+	"generated" : "true"
+}
