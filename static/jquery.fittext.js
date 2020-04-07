@@ -42,4 +42,4 @@
 
 })( jQuery );
 
-$("#headline").fitText();
+$("#headline").fitText(.6);
