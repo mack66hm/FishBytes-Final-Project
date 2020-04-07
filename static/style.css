@@ -213,13 +213,14 @@ body {
 
 .catch-info {
     margin: .25rem;
+    text-align: center;
 }
 
 .size-weight {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .date {
