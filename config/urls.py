@@ -30,6 +30,7 @@ urlpatterns = [
     path('profile/<int:pk>/delete/', views.delete_catch, name='delete-catch'),
     path('maps/<int:pk>/', views.show_map, name='show-map'),
     path('fishid/', views.fishid, name='fishid'),
+    path('serviceworker.js', views.serviceworker, name='serviceworker'),
 ]
 
 if settings.DEBUG:

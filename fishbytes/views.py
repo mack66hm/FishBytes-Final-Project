@@ -3,6 +3,7 @@ from .models import Lake, Fish, Regulation, Tag, Catch, User, Question
 from fishbytes.forms import CatchForm
 from django.contrib.auth.decorators import login_required
 from django.http import HttpRequest
+from django.template.loader import get_template
 
 
 
@@ -84,3 +85,8 @@ def show_map(request, pk):
         'lake': lake, 
         'lake_center': lake_center }
     return render(request, 'core/maps.html', context)
+
+def serviceworker(request):
+    template = get_template('core/serviceworker.js')
+    html = template.render()
+    return HttpResponse(html, content_type="application/x-javascript")
