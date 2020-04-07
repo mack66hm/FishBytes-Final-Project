@@ -38,9 +38,13 @@
         </div>
     <div class="link">
         <a class="link home" href="/">Home</a>
-        <a class="link profile" href= "{% url 'profile-page' %}">View Profile</a>
+        <a class="link profile" href= "{% url 'profile-page' %}">Profile</a>
         <a class="link" href="{% url 'fishid' %}">FishID</a>
+        {% if user.is_authenticated %}
         <a class="link logout" href="http://fishbytes.herokuapp.com/accounts/login/?next=/profile/">Log Out</a>
+        {% else %}
+        <a class="link logout" href="http://fishbytes.herokuapp.com/accounts/login/">Log In</a>
+        {% endif %}
     </div>
 
     </header>
