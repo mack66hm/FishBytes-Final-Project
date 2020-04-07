@@ -45,7 +45,7 @@ def add_catch(request):
 def edit_catch(request, pk):
     catch = get_object_or_404(Catch, pk=pk)
     if request.method == 'POST':
-        form = CatchForm(request.POST, instance=catch)
+        form = CatchForm(request.POST, request.FILES, instance=catch)
         if form.is_valid():
             catch = form.save(commit=False)
             catch.user = request.user
